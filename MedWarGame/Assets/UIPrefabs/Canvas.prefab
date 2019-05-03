@@ -293,10 +293,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f2171104fa41b43a7c92dabdfc6121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dwarfPrefab: {fileID: 0}
-  elvePrefab: {fileID: 0}
-  ogrePrefab: {fileID: 0}
-  wizardPrefab: {fileID: 0}
+  selectedTroop: 0
+  dwarfPrefab: {fileID: 8938457611857283141, guid: d1f57027b0372364b8154dcf8cef7bea,
+    type: 3}
+  elvePrefab: {fileID: 8938457611857283141, guid: 87199a5bedc05eb43bae263c6cfcb2b7,
+    type: 3}
+  ogrePrefab: {fileID: 8938457611857283141, guid: de9eeac06f5b1dd4f985bb6c2fa65ba5,
+    type: 3}
+  wizardPrefab: {fileID: 8938457611857283141, guid: f4ebc761ef870b44887f40627418e018,
+    type: 3}
   dwarfButton: {fileID: 4112915768236573935}
   elveButton: {fileID: 8847837632287601115}
   ogreButton: {fileID: 4253771833187213544}
