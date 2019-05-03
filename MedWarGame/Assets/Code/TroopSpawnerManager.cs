@@ -5,6 +5,16 @@ using UnityEngine.UI;
 
 public class TroopSpawnerManager : MonoBehaviour
 {
+    public enum Troop
+    {
+        none,
+        dwarf,
+        elve,
+        ogre,
+        wizard
+    }
+    public Troop selectedTroop;
+
     [SerializeField] private GameObject dwarfPrefab = default;
     [SerializeField] private GameObject elvePrefab = default;
     [SerializeField] private GameObject ogrePrefab = default;
@@ -18,6 +28,7 @@ public class TroopSpawnerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        selectedTroop = Troop.none;
         dwarfButton.onClick.AddListener(InstantiateDwarf);
         elveButton.onClick.AddListener(InstantiateElve);
         ogreButton.onClick.AddListener(InstantiateOgre);
@@ -32,18 +43,22 @@ public class TroopSpawnerManager : MonoBehaviour
 
     private void InstantiateDwarf()
     {
+        selectedTroop = Troop.dwarf;
         Debug.Log("Dward Selected");
     }
     private void InstantiateElve()
     {
+        selectedTroop = Troop.elve;
         Debug.Log("Elve Selected");
     }
     private void InstantiateOgre()
     {
+        selectedTroop = Troop.ogre;
         Debug.Log("Ogre Selected");
     }
     private void InstantiateWizard()
     {
+        selectedTroop = Troop.wizard;
         Debug.Log("Wizard Selected");
     }
 }
