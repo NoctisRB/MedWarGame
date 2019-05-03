@@ -28,7 +28,7 @@ public class troopScript : MonoBehaviour
     private Vector3 _destination;
 
     
-    private enum State
+    public enum State
     {
         Idle,
         MoveTo,
@@ -83,6 +83,10 @@ public class troopScript : MonoBehaviour
                 ChangeState(State.Idle);
             }
         }
+        else if (_currentState == State.MoveTo)
+        {
+            _agent.destination = _destination;
+        }
 
     }
 
@@ -92,7 +96,7 @@ public class troopScript : MonoBehaviour
         return Enemies;
     }
 
-    private void ChangeState(State nextState)
+    public void ChangeState(State nextState)
     {
 
         switch (_currentState)
@@ -116,7 +120,7 @@ public class troopScript : MonoBehaviour
                 break;
             case State.MoveTo:
                 _agent.speed = _speed;
-                _agent.destination = _target.transform.position;
+                _agent.destination = _destination;
                 _currentState = nextState;
                 break;
             case State.Attack:
@@ -144,5 +148,11 @@ public class troopScript : MonoBehaviour
         return _deployRange;
     }
 
+    public void MoveTo(Vector3 pos)
+    {
+        Debug.Log("MOVE");
+        SetDestination(pos);
+        ChangeState(State.MoveTo);
+    }
 
 }
