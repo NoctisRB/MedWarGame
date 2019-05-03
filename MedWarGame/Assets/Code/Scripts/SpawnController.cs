@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-    private GameObject treesParent;
-    private treeScript[] trees;
-    [SerializeField] private TroopSelectorManager troopSelection = default;
+    [SerializeField] private GameObject treesParent =  default;
+    treeScript[] trees = default;
+    [SerializeField] private TroopSelectionManager troopSelection = default;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,20 +25,23 @@ public class SpawnController : MonoBehaviour
         {
             if (t.isSelected) return t;
         }
+        Debug.Log("No tree selected");
         return null;
     }
 
-    private void SpawnTroop()
+    public void SpawnTroop()
     {
         Vector3 treePos = GetActiveTree().gameObject.transform.position;
         float deployRange = troopSelection.GetSelectedTroop().GetDeployRange();
         GameObject troopPrefab = troopSelection.GetSelectedTroopPrefab();
 
-
+        Instantiate(troopPrefab, GenerateRandomPosition(treePos, deployRange), Quaternion.identity);
     }
 
-    private void GenerateRandomPosition(Vector3 treePos, float deployRange)
+    private Vector3 GenerateRandomPosition(Vector3 treePos, float deployRange)
     {
-
+        float xPos = Random.Range(treePos.x - deployRange, treePos.x + deployRange);
+        float zPos = Random.Range(treePos.z - deployRange, treePos.z + deployRange);
+        return new Vector3(xPos, 0, zPos);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TroopSelectorManager : MonoBehaviour
+public class TroopSelectionManager : MonoBehaviour
 {
     public enum Troop
     {
@@ -29,6 +29,8 @@ public class TroopSelectorManager : MonoBehaviour
     [SerializeField] private Button ogreButton = default;
     [SerializeField] private Button wizardButton = default;
 
+    private SpawnController spawnController;
+
     void Start()
     {
         dwarf = dwarfPrefab.GetComponent<troopScript>();
@@ -40,27 +42,29 @@ public class TroopSelectorManager : MonoBehaviour
         elveButton.onClick.AddListener(InstantiateElve);
         ogreButton.onClick.AddListener(InstantiateOgre);
         wizardButton.onClick.AddListener(InstantiateWizard);
+
+        spawnController = GameObject.Find("GameManager").GetComponent<SpawnController>();
     }
 
     private void InstantiateDwarf()
     {
         selectedTroop = Troop.dwarf;
-        Debug.Log("Dward Selected");
+        spawnController.SpawnTroop();
     }
     private void InstantiateElve()
     {
         selectedTroop = Troop.elve;
-        Debug.Log("Elve Selected");
+        spawnController.SpawnTroop();
     }
     private void InstantiateOgre()
     {
         selectedTroop = Troop.ogre;
-        Debug.Log("Ogre Selected");
+        spawnController.SpawnTroop();
     }
     private void InstantiateWizard()
     {
         selectedTroop = Troop.wizard;
-        Debug.Log("Wizard Selected");
+        spawnController.SpawnTroop();
     }
 
     public troopScript GetSelectedTroop()
