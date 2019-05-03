@@ -11,9 +11,11 @@ public class treeScript : MonoBehaviour
     public bool isSelected;
     public GameObject radius;
     private Vector3 radiusTargetScale;
+    private bool alphaIncresing = false;
 
     private void Start()
     {
+        Debug.Log(radius.GetComponent<SpriteRenderer>().color.a);
         radiusTargetScale = radius.transform.localScale;
         radius.transform.localScale = Vector3.zero;
     }
@@ -28,12 +30,34 @@ public class treeScript : MonoBehaviour
         }
 
         if (isSelected)
+        {
             radius.transform.localScale = Vector3.Lerp(radius.transform.localScale, radiusTargetScale, 0.1f);
+            AlphaChanger();
+        }
         else
             radius.transform.localScale = Vector3.Lerp(radius.transform.localScale, Vector3.zero, 0.1f);
     }
     public float GetEnergy()
     {
         return energyPerSecond;
+    }
+    private void AlphaChanger()
+    {
+        Color tempColor = radius.GetComponent<SpriteRenderer>().color;
+        float tempColorAlpha = tempColor.a;
+        if (tempColorAlpha >= 0.69f)            
+            alphaIncresing = false;
+        if (tempColorAlpha <= 0.31f)
+            alphaIncresing = true;
+        if (alphaIncresing)
+            tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.7f, 0.05f);
+            //tempColorAlpha += 0.6f * Time.deltaTime;
+        else
+            tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.3f, 0.05f);
+            //tempColorAlpha -= 0.6f * Time.deltaTime;
+
+        Debug.Log(tempColorAlpha);
+        tempColor.a = tempColorAlpha;
+        radius.GetComponent<SpriteRenderer>().color = tempColor;
     }
 }
