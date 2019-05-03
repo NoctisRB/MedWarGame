@@ -32,8 +32,6 @@ public class treeScript : MonoBehaviour
         else
             radius.transform.localScale = Vector3.Lerp(radius.transform.localScale, Vector3.zero, 0.1f);
     }
-
-
     public float GetEnergy()
     {
         return energyPerSecond;
