@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TroopSpawnerManager : MonoBehaviour
+public class TroopSelectorManager : MonoBehaviour
 {
     public enum Troop
     {
@@ -30,7 +30,6 @@ public class TroopSpawnerManager : MonoBehaviour
     [SerializeField] private Button ogreButton = default;
     [SerializeField] private Button wizardButton = default;
 
-    // Start is called before the first frame update
     void Start()
     {
         dwarf = dwarfPrefab.GetComponent<troopScript>();
@@ -43,12 +42,6 @@ public class TroopSpawnerManager : MonoBehaviour
         elveButton.onClick.AddListener(InstantiateElve);
         ogreButton.onClick.AddListener(InstantiateOgre);
         wizardButton.onClick.AddListener(InstantiateWizard);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void InstantiateDwarf()
@@ -70,5 +63,14 @@ public class TroopSpawnerManager : MonoBehaviour
     {
         selectedTroop = Troop.wizard;
         Debug.Log("Wizard Selected");
+    }
+
+    public troopScript GetTroopSelected()
+    {
+        if (selectedTroop == Troop.dwarf) return dwarf;
+        else if (selectedTroop == Troop.elve) return elve;
+        else if (selectedTroop == Troop.ogre) return ogre;
+        else if (selectedTroop == Troop.wizard) return wizard;
+        else return null;
     }
 }
