@@ -139,5 +139,10 @@ public class troopScript : MonoBehaviour
         _hp += hp;
     }
 
+    public float GetDeployRange()
+    {
+        return _deployRange;
+    }
+
 
 }
