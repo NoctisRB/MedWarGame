@@ -7,7 +7,6 @@ public class TroopSelectorManager : MonoBehaviour
 {
     public enum Troop
     {
-        none,
         dwarf,
         elve,
         ogre,
@@ -37,7 +36,6 @@ public class TroopSelectorManager : MonoBehaviour
         ogre = ogrePrefab.GetComponent<troopScript>();
         wizard = wizardPrefab.GetComponent<troopScript>();
 
-        selectedTroop = Troop.none;
         dwarfButton.onClick.AddListener(InstantiateDwarf);
         elveButton.onClick.AddListener(InstantiateElve);
         ogreButton.onClick.AddListener(InstantiateOgre);
@@ -65,12 +63,19 @@ public class TroopSelectorManager : MonoBehaviour
         Debug.Log("Wizard Selected");
     }
 
-    public troopScript GetTroopSelected()
+    public troopScript GetSelectedTroop()
     {
         if (selectedTroop == Troop.dwarf) return dwarf;
         else if (selectedTroop == Troop.elve) return elve;
         else if (selectedTroop == Troop.ogre) return ogre;
-        else if (selectedTroop == Troop.wizard) return wizard;
-        else return null;
+        else return wizard;
+    }
+
+    public GameObject GetSelectedTroopPrefab()
+    {
+        if (selectedTroop == Troop.dwarf) return dwarfPrefab;
+        else if (selectedTroop == Troop.elve) return elvePrefab;
+        else if (selectedTroop == Troop.ogre) return ogrePrefab;
+        else return wizardPrefab;
     }
 }
