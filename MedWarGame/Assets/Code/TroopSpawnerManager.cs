@@ -20,6 +20,11 @@ public class TroopSpawnerManager : MonoBehaviour
     [SerializeField] private GameObject ogrePrefab = default;
     [SerializeField] private GameObject wizardPrefab = default;
 
+    private troopScript dwarf;
+    private troopScript elve;
+    private troopScript ogre;
+    private troopScript wizard;
+
     [SerializeField] private Button dwarfButton = default;
     [SerializeField] private Button elveButton = default;
     [SerializeField] private Button ogreButton = default;
@@ -28,6 +33,11 @@ public class TroopSpawnerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dwarf = dwarfPrefab.GetComponent<troopScript>();
+        elve = elvePrefab.GetComponent<troopScript>();
+        ogre = ogrePrefab.GetComponent<troopScript>();
+        wizard = wizardPrefab.GetComponent<troopScript>();
+
         selectedTroop = Troop.none;
         dwarfButton.onClick.AddListener(InstantiateDwarf);
         elveButton.onClick.AddListener(InstantiateElve);
