@@ -178,9 +178,6 @@ public class enemyTroopScript : MonoBehaviour
             }
             else { ChangeState(State.Idle); }
 
-
-
-
         }
 
     }
@@ -276,6 +273,11 @@ public class enemyTroopScript : MonoBehaviour
 
     private void Hurt(GameObject enemy)
     {
+        if (enemy == null)
+        {
+            _target = null;
+            return;
+        }
         if (enemy.activeSelf)
         {
             switch (_troopType)
