@@ -5427,6 +5427,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -296.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2615068884361674338, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -57.89997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003863481981126878, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 49.60003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919804412976510309, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 156.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090828296375245840, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 263.6
+      objectReference: {fileID: 0}
     - target: {fileID: 7820977027530160858, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
         type: 3}
       propertyPath: energyPerSecText
