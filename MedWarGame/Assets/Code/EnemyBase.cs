@@ -21,8 +21,6 @@ public class EnemyBase : MonoBehaviour
     [SerializeField]
     private float _currentEnergy;
 
-  
-
     // Start is called before the first frame update
     void Start()
     {
