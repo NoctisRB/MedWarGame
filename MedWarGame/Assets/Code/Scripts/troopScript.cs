@@ -76,16 +76,34 @@ public class troopScript : MonoBehaviour
             }
             foreach (var enemy in _enemies)
             {
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) > _attackRange)
                 {
                     break;  
                 }
-                ChangeState(State.Idle);
+                
+                
             }
         }
         else if (_currentState == State.MoveTo)
         {
-            _agent.destination = _destination;
+            foreach (var enemy in _enemies)
+            {
+                
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
+                {
+                    Debug.Log("Change to Attack");
+                    _target = enemy;
+                    ChangeState(State.Attack);
+                    break;
+                }
+                else if (Vector3.Distance(enemy.transform.position, this.transform.position) > _attackRange)
+                {
+                    break;
+                }
+                Debug.Log("Change to Attack");
+                ChangeState(State.Idle);
+            }
+
         }
 
     }
@@ -115,20 +133,20 @@ public class troopScript : MonoBehaviour
         switch (nextState)
         {
             case State.Idle:
-                _currentState = nextState;
                 _agent.speed = 0;
                 break;
             case State.MoveTo:
                 _agent.speed = _speed;
-                _agent.destination = _destination;
-                _currentState = nextState;
+                _agent.destination = _destination;         
                 break;
             case State.Attack:
-                _currentState = nextState;
+                _agent.speed = 0;             
                 break;
             default:
                 break;
         }
+
+        _currentState = nextState;
 
     }
 
