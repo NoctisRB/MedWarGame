@@ -108,7 +108,7 @@ public class enemyTroopScript : MonoBehaviour
             if (_canAttack)
             {
                 Hurt(_target);
-                Invoke("ResetHurt", 0f);
+                Invoke("ResetHurt", 1.0f);
                 _canAttack = false;
             }
 
@@ -231,7 +231,7 @@ public class enemyTroopScript : MonoBehaviour
     {
         enemy.GetComponent<troopScript>().SetHP(-_attack);
     }
-    private void ResetHurt(GameObject enemy)
+    private void ResetHurt()
     {
         _canAttack = true;
     }

@@ -33,7 +33,7 @@ public class troopScript : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
-    private bool _canAttack;
+    private bool _canAttack = true;
 
     public enum State
     {
@@ -103,11 +103,11 @@ public class troopScript : MonoBehaviour
                     break;
                 }
             }
-
+            
             if (_canAttack)
             {
                 Hurt(_target);
-                Invoke("ResetHurt", 0f);
+                Invoke("ResetHurt", 1.0f);
                 _canAttack = false;
             }
 
@@ -230,7 +230,7 @@ public class troopScript : MonoBehaviour
     {
         enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
     }
-    private void ResetHurt(GameObject enemy)
+    private void ResetHurt()
     {
         _canAttack = true;
     }
