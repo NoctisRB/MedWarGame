@@ -89,9 +89,9 @@ public class EnemyBase : MonoBehaviour
     private void SpawnTroop()
     {
         //Spawn troop that must be send by COnsider Spawn
-        Instantiate(GetSpawneableTroop(), GenerateRandomPosition(GetSpawneableTroop().GetComponent<troopScript>().GetDeployRange()), Quaternion.identity);
+        Instantiate(GetSpawneableTroop(), GenerateRandomPosition(GetSpawneableTroop().GetComponent<enemyTroopScript>().GetDeployRange()), Quaternion.identity);
         //Rest Cost of the spawned troop to _currentEnergy
-        _currentEnergy -= GetSpawneableTroop().GetComponent<troopScript>().GetCost();
+        _currentEnergy -= GetSpawneableTroop().GetComponent<enemyTroopScript>().GetCost();
         Debug.Log("SPAWN");
         return;
     }
