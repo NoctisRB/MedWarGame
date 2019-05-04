@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4233799215231836649
 Transform:
   m_ObjectHideFlags: 0
@@ -477,26 +477,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6871121
-      objectReference: {fileID: 0}
-    - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6871121
-      objectReference: {fileID: 0}
-    - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6871121
-      objectReference: {fileID: 0}
-    - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.55
       objectReference: {fileID: 0}
@@ -532,6 +512,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.99500006
       objectReference: {fileID: 0}
@@ -544,6 +529,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.106000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6871121
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6871121
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667065498682585605, guid: 2496a07fe5cc8f24197fd3c4110f373c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6871121
       objectReference: {fileID: 0}
     - target: {fileID: 1015858098964403586, guid: 2496a07fe5cc8f24197fd3c4110f373c,
         type: 3}
@@ -565,6 +565,12 @@ PrefabInstance:
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3882085738037727943, guid: 2496a07fe5cc8f24197fd3c4110f373c,
+        type: 3}
+      propertyPath: treeParticles
+      value: 
+      objectReference: {fileID: 9187852984366261316, guid: f7677a55fffa15d41a72ffca3092fca3,
+        type: 3}
     - target: {fileID: 8078699905848383304, guid: 2496a07fe5cc8f24197fd3c4110f373c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -842,6 +848,12 @@ PrefabInstance:
       propertyPath: isSelected
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3882085738037727943, guid: 2496a07fe5cc8f24197fd3c4110f373c,
+        type: 3}
+      propertyPath: treeParticles
+      value: 
+      objectReference: {fileID: 9187852984366261316, guid: f7677a55fffa15d41a72ffca3092fca3,
+        type: 3}
     - target: {fileID: 8078699905848383304, guid: 2496a07fe5cc8f24197fd3c4110f373c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -969,6 +981,12 @@ PrefabInstance:
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3882085738037727943, guid: 2496a07fe5cc8f24197fd3c4110f373c,
+        type: 3}
+      propertyPath: treeParticles
+      value: 
+      objectReference: {fileID: 9187852984366261316, guid: f7677a55fffa15d41a72ffca3092fca3,
+        type: 3}
     - target: {fileID: 8078699905848383304, guid: 2496a07fe5cc8f24197fd3c4110f373c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

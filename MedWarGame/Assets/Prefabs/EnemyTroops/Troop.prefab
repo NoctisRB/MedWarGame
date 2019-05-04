@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 393557156470088831}
   - component: {fileID: 393557156470088818}
   - component: {fileID: 393557156470088819}
-  - component: {fileID: 4977297119099821292}
   m_Layer: 0
   m_Name: Troop
   m_TagString: Untagged
@@ -96,11 +95,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attack: 0
   _hp: 10
-  _attackRange: 0
+  _attackRangeBase: 0
+  _attackRangeTroop: 0
+  _alertRange: 0
   _speed: 0
   _cost: 0
   _deployRange: 0
+  _animator: {fileID: 0}
+  _orcProjectile: {fileID: 0}
+  _elveProjectile: {fileID: 0}
+  _wizardProjectile: {fileID: 0}
   _currentState: 0
+  _troopType: 0
 --- !u!195 &393557156470088818
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -139,19 +145,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4977297119099821292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393557156470088828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee609373a40fa54d81519d44c3f306a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionCircle: {fileID: 797398413827950588}
 --- !u!1 &797398413827950588
 GameObject:
   m_ObjectHideFlags: 0
