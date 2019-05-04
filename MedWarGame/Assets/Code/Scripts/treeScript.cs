@@ -12,6 +12,7 @@ public class treeScript : MonoBehaviour
     public GameObject radiusSprite;
     private Vector3 radiusTargetScale;
     private bool alphaIncresing = false;
+    public ParticleSystem treeParticles;
 
     private void Start()
     {
@@ -24,9 +25,14 @@ public class treeScript : MonoBehaviour
         {
             radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, radiusTargetScale, 0.1f * 60 * Time.deltaTime);
             AlphaChanger();
+            treeParticles.Play();
+            ParticleSystem.ShapeModule treeParticlesShapeModule = treeParticles.shape;
+            treeParticlesShapeModule.radius = Mathf.Lerp(treeParticlesShapeModule.radius, 7f, 0.1f * 60 * Time.deltaTime);
+            //Debug.Log(treeParticlesShapeModule.radius);
         }
         else
             radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, Vector3.zero, 0.1f * 60 * Time.deltaTime);
+            
     }
     public float GetEnergy()
     {
