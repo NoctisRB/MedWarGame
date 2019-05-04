@@ -785,6 +785,7 @@ MonoBehaviour:
   _hp: 50
   _attackRangeBase: 5
   _attackRangeTroop: 2
+  _alertRange: 10
   _speed: 3
   _cost: 1
   _deployRange: 3
