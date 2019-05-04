@@ -283,21 +283,21 @@ public class troopScript : MonoBehaviour
                 case TroopType.Dwarf:
                     break;
                 case TroopType.Elve:
-                    GameObject Elveprojectile = Instantiate(_elveProjectile);
-                    //Elveprojectile.MoveTo(enemy.transform.position);
+                    GameObject Elveprojectile = Instantiate(_elveProjectile, this.transform.position, Quaternion.identity);
+                    Elveprojectile.GetComponent<ProjectileShot>().MoveTo(this.transform.forward);
                     break;
                 case TroopType.Orc:
-                    GameObject Orcprojectile = Instantiate(_orcProjectile);
-                    //Orcprojectile.MoveTo(enemy.transform.position);
+                    GameObject Orcprojectile = Instantiate(_orcProjectile, this.transform.position, Quaternion.identity);
+                    Orcprojectile.GetComponent<ProjectileShot>().MoveTo(this.transform.forward);
                     break;
                 case TroopType.Wizard:
-                    GameObject Wizardprojectile = Instantiate(_wizardProjectile);
-                    //Wizardprojectile.MoveTo(enemy.transform.position);
+                    GameObject Wizardprojectile = Instantiate(_wizardProjectile, this.transform.position, Quaternion.identity);
+                    Wizardprojectile.GetComponent<ProjectileShot>().MoveTo(this.transform.forward);
                     break;
                 default:
                     break;
             }
-            enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+            //enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
         }
         else {
             ChangeState(State.Idle);
