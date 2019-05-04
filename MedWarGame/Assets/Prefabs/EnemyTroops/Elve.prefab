@@ -849,10 +849,9 @@ GameObject:
   - component: {fileID: 4313996374796973771}
   - component: {fileID: 5376060051353384640}
   - component: {fileID: 9183593465823599621}
-  - component: {fileID: 1184543461826618986}
   - component: {fileID: 2513274382907996663}
   m_Layer: 0
-  m_Name: Dwarf
+  m_Name: Elve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -908,12 +907,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attack: 10
   _hp: 50
-  _attackRange: 5
+  _attackRangeBase: 0
+  _attackRangeTroop: 0
+  _alertRange: 0
   _speed: 3
   _cost: 1
   _deployRange: 3
   _animator: {fileID: 4313996374796973771}
+  _orcProjectile: {fileID: 0}
+  _elveProjectile: {fileID: 0}
+  _wizardProjectile: {fileID: 0}
   _currentState: 0
+  _troopType: 0
 --- !u!54 &9183593465823599621
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -930,19 +935,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1184543461826618986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7137992937007933858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee609373a40fa54d81519d44c3f306a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionCircle: {fileID: 7761720501294647791}
 --- !u!195 &2513274382907996663
 NavMeshAgent:
   m_ObjectHideFlags: 0

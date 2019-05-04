@@ -135,14 +135,23 @@ public class UnitSelectionComponent : MonoBehaviour
 
     private void MoveUnits(GameObject target, List<GameObject> selectedObjects)
     {
-
-        foreach (var selectedUnit in selectedObjects)
+        if (!selectedObjects.Count.Equals(0))
         {
-            selectedUnit.GetComponent<troopScript>().MoveTo(target);
+            foreach (var selectedUnit in selectedObjects)
+            {
+                if (selectedUnit == null)
+                {
+                    Debug.Log("UNIT-NULL");
+                }
+                if (target != null)
+                {
+                    selectedUnit.GetComponent<troopScript>().MoveTo(target);
+                }
+                
+            }
+                _selectedObjects.Clear();
+          
         }
-        if (_selectedObjects != null)
-        {
-            _selectedObjects.Clear();
-        }
+        
     }
 }
