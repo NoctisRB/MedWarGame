@@ -38,6 +38,24 @@ public class troopScript : MonoBehaviour
 
     private bool _canAttack = true;
 
+    public enum TroopType
+    {
+        Dwarf,
+        Elve,
+        Orc,
+        Wizard
+    };
+
+    [SerializeField]
+    private GameObject _orcProjectile;
+
+    [SerializeField]
+    private GameObject _elveProjectile;
+
+    [SerializeField]
+    private GameObject _wizardProjectile;
+
+
     public enum State
     {
         Idle,
@@ -47,6 +65,9 @@ public class troopScript : MonoBehaviour
 
     [SerializeField]
     private State _currentState;
+
+    [SerializeField]
+    private TroopType _troopType;
 
     private GameObject[] _enemies;
     private GameObject[] _enemyBases;
@@ -257,7 +278,26 @@ public class troopScript : MonoBehaviour
     {
         if (enemy.activeSelf)
         {
-            enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+            switch (_troopType)
+            {
+                case TroopType.Dwarf:
+                    break;
+                case TroopType.Elve:
+                    GameObject Elveprojectile = Instantiate(_elveProjectile, this.transform.position, Quaternion.identity);
+                    Elveprojectile.GetComponent<ProjectileShot>().MoveTo(this.transform.forward);
+                    break;
+                case TroopType.Orc:
+                    GameObject Orcprojectile = Instantiate(_orcProjectile, this.transform.position, Quaternion.identity);
+                    Orcprojectile.GetComponent<ProjectileShot>().MoveTo(this.transform.forward);
+                    break;
+                case TroopType.Wizard:
+                    GameObject Wizardprojectile = Instantiate(_wizardProjectile, this.transform.position, Quaternion.identity);
+                    Wizardprojectile.GetComponent<ProjectileShot>().MoveTo(this.transform.forward);
+                    break;
+                default:
+                    break;
+            }
+            //enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
         }
         else {
             ChangeState(State.Idle);
