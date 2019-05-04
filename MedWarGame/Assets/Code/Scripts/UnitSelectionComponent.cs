@@ -28,7 +28,7 @@ public class UnitSelectionComponent : MonoBehaviour
             {
                 GameObject objectHit = hit.transform.gameObject;
                 Debug.Log(objectHit.name);
-                if (hit.collider.gameObject.tag == "Enemy")
+                if (hit.collider.gameObject.tag == "Enemy" || hit.collider.gameObject.tag == "EnemyBase")
                 {
 
                     if (_selectedObjects != null)
@@ -38,16 +38,6 @@ public class UnitSelectionComponent : MonoBehaviour
                     }
 
                 }
-            }
-
-                
-
-                // Does the ray intersect any objects excluding the player layer
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
-            {
-   
-                      
-               
             }
             
             

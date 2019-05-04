@@ -20,21 +20,13 @@ public class treeScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (isSelected)
-                isSelected = false;
-            else
-                isSelected = true;
-        }
-
         if (isSelected)
         {
-            radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, radiusTargetScale, 0.1f);
+            radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, radiusTargetScale, 0.1f * 60 * Time.deltaTime);
             AlphaChanger();
         }
         else
-            radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, Vector3.zero, 0.1f);
+            radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, Vector3.zero, 0.1f * 60 * Time.deltaTime);
     }
     public float GetEnergy()
     {
@@ -45,11 +37,11 @@ public class treeScript : MonoBehaviour
     {
         Color tempColor = radiusSprite.GetComponent<SpriteRenderer>().color;
         float tempColorAlpha = tempColor.a;
-        if (tempColorAlpha >= 0.69f) alphaIncresing = false;
-        if (tempColorAlpha <= 0.31f) alphaIncresing = true;
-        if (alphaIncresing) tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.7f, 0.05f);
-        else tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.3f, 0.05f);
 
+        if (tempColorAlpha >= 0.69f) alphaIncresing = false;
+        if (tempColorAlpha <= 0.41f) alphaIncresing = true;
+        if (alphaIncresing) tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.7f, 0.05f * 60 * Time.deltaTime);
+        else tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.3f, 0.05f * 60 * Time.deltaTime);
         tempColor.a = tempColorAlpha;
         radiusSprite.GetComponent<SpriteRenderer>().color = tempColor;
     }
