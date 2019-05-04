@@ -226,12 +226,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3409842911002470153}
   - component: {fileID: 4744596968607255155}
-  - component: {fileID: 4742013745652137674}
   - component: {fileID: 7283732100594081161}
   - component: {fileID: 657363581433361671}
   - component: {fileID: 8577071563228645345}
+  - component: {fileID: -5017872059508962665}
   m_Layer: 0
-  m_Name: Ogre
+  m_Name: EvilOrc
   m_TagString: Troop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,35 +273,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4742013745652137674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804091698338944282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d830b108ff12c154cbe5ca332f8b984c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attack: 20
-  _hp: 40
-  _attackRangeBase: 5
-  _attackRangeTroop: 5
-  _alertRange: 8
-  _speed: 4
-  _cost: 25
-  _deployRange: 5
-  _animator: {fileID: 4744596968607255155}
-  _orcProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
-    type: 3}
-  _elveProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
-    type: 3}
-  _wizardProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
-    type: 3}
-  _currentState: 0
-  _troopType: 2
 --- !u!54 &7283732100594081161
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -353,6 +324,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionCircle: {fileID: 4056689123020179178}
+--- !u!114 &-5017872059508962665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804091698338944282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9b6562dc399074b987ad50db5bce18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: 20
+  _hp: 40
+  _attackRangeBase: 5
+  _attackRangeTroop: 5
+  _alertRange: 8
+  _speed: 4
+  _cost: 25
+  _deployRange: 5
+  _animator: {fileID: 4744596968607255155}
+  _orcProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
+    type: 3}
+  _elveProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
+    type: 3}
+  _wizardProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
+    type: 3}
+  _currentState: 0
+  _troopType: 2
 --- !u!1 &1815193713238892927
 GameObject:
   m_ObjectHideFlags: 0
