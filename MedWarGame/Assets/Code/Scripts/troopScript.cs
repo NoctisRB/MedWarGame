@@ -27,6 +27,9 @@ public class troopScript : MonoBehaviour
     private GameObject _target;
     private Vector3 _destination;
 
+    [SerializeField]
+    private Animator _animator;
+
     
     public enum State
     {
@@ -43,7 +46,9 @@ public class troopScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         _agent = this.GetComponent<NavMeshAgent>();
+        ChangeState(State.Idle);
     }
 
     // Update is called once per frame
@@ -60,7 +65,7 @@ public class troopScript : MonoBehaviour
         {
             foreach (var enemy in _enemies)
             {
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(_destination, this.transform.position) < _attackRange)
                 {
                     _target = enemy;
                     ChangeState(State.Attack);
@@ -88,15 +93,15 @@ public class troopScript : MonoBehaviour
         {
             foreach (var enemy in _enemies)
             {
-                
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
+                Debug.Log(Vector3.Distance(_destination, this.transform.position).ToString());
+                if (Vector3.Distance(_destination, this.transform.position) < _attackRange)
                 {
                     Debug.Log("Change to Attack");
                     _target = enemy;
                     ChangeState(State.Attack);
                     break;
                 }
-                else if (Vector3.Distance(enemy.transform.position, this.transform.position) > _attackRange)
+                else if (Vector3.Distance(_destination, this.transform.position) > _attackRange)
                 {
                     break;
                 }
@@ -120,10 +125,13 @@ public class troopScript : MonoBehaviour
         switch (_currentState)
         {
             case State.Idle:
+                _animator.SetBool("idle", false);
                 break;
             case State.MoveTo:
+                _animator.SetBool("run", false);
                 break;
             case State.Attack:
+                _animator.SetBool("attack", false);
                 _target = null;
                 break;
             default:
@@ -133,13 +141,16 @@ public class troopScript : MonoBehaviour
         switch (nextState)
         {
             case State.Idle:
+                _animator.SetBool("idle", true);
                 _agent.speed = 0;
                 break;
             case State.MoveTo:
+                _animator.SetBool("run", true);
                 _agent.speed = _speed;
                 _agent.destination = _destination;         
                 break;
             case State.Attack:
+                _animator.SetBool("attack", true);
                 _agent.speed = 0;             
                 break;
             default:
@@ -164,6 +175,11 @@ public class troopScript : MonoBehaviour
     public float GetDeployRange()
     {
         return _deployRange;
+    }
+
+    public float GetCost()
+    {
+        return _cost;
     }
 
     public void MoveTo(Vector3 pos)

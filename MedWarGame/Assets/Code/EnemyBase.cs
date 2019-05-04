@@ -6,6 +6,21 @@ using Random = UnityEngine.Random;
 
 public class EnemyBase : MonoBehaviour
 {
+    private enum Troop
+    {
+        dwarf,
+        elve,
+        ogre,
+        wizard
+    }
+    private Troop spawnedTroop;
+
+    [SerializeField] private GameObject dwarfPrefab = default;
+    [SerializeField] private GameObject elvePrefab = default;
+    [SerializeField] private GameObject ogrePrefab = default;
+    [SerializeField] private GameObject wizardPrefab = default;
+
+    private GameObject spawnablePrefab;
 
     [SerializeField]
     private float _minTimeSpawn;
@@ -50,6 +65,10 @@ public class EnemyBase : MonoBehaviour
         {
             //Spawn Dwarf or Elf
             Debug.Log("DWARF or ELF");
+
+            int r = Random.Range(0, 1);
+            if (r == 0) spawnedTroop = Troop.dwarf;
+            else spawnedTroop = Troop.elve;
             SpawnTroop();
             return;
         }
@@ -57,6 +76,11 @@ public class EnemyBase : MonoBehaviour
         {
             //Spawn Orc or Wizard
             Debug.Log("ORC or WIZARD or DWARF or ELF");
+            int r = Random.Range(0, 3);
+            if (r == 0) spawnedTroop = Troop.dwarf;
+            else if (r == 1) spawnedTroop = Troop.elve;
+            else if(r == 2) spawnedTroop = Troop.ogre;
+            else spawnedTroop = Troop.wizard;
             SpawnTroop();
             return;
         }
@@ -65,8 +89,25 @@ public class EnemyBase : MonoBehaviour
     private void SpawnTroop()
     {
         //Spawn troop that must be send by COnsider Spawn
+        Instantiate(GetSpawneableTroop(), GenerateRandomPosition(GetSpawneableTroop().GetComponent<troopScript>().GetDeployRange()), Quaternion.identity);
         //Rest Cost of the spawned troop to _currentEnergy
+        _currentEnergy -= GetSpawneableTroop().GetComponent<troopScript>().GetCost();
         Debug.Log("SPAWN");
         return;
+    }
+    
+    private GameObject GetSpawneableTroop()
+    {
+        if (spawnedTroop == Troop.dwarf) return dwarfPrefab;
+        else if (spawnedTroop == Troop.elve) return elvePrefab;
+        else if (spawnedTroop == Troop.ogre) return ogrePrefab;
+        else return wizardPrefab;
+    }
+
+    private Vector3 GenerateRandomPosition(float deployRange)
+    {
+        float xPos = Random.Range(this.gameObject.transform.position.x - deployRange, this.gameObject.transform.position.x + deployRange);
+        float zPos = Random.Range(this.gameObject.transform.position.z - deployRange, this.gameObject.transform.position.z + deployRange);
+        return new Vector3(xPos, 0, zPos);
     }
 }
