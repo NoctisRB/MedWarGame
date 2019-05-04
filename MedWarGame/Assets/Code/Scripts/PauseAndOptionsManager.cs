@@ -6,11 +6,10 @@ public class PauseAndOptionsManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static bool gameIsPaused = false;
-    [SerializeField] private GameObject pauseCanvas;
-    private GameObject troopSelector;
+    [SerializeField] private GameObject pauseCanvas = default;
+    [SerializeField] private GameObject troopSelector = default;
     void Start()
     {
-        troopSelector = GameObject.Find("TroopButtonsPanel");
     }
 
     // Update is called once per frame
