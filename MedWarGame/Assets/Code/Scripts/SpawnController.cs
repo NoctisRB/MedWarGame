@@ -13,12 +13,6 @@ public class SpawnController : MonoBehaviour
         trees = treesParent.GetComponentsInChildren<treeScript>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private treeScript GetActiveTree()
     {
         foreach(treeScript t in trees)
@@ -35,7 +29,8 @@ public class SpawnController : MonoBehaviour
         float deployRange = troopSelection.GetSelectedTroop().GetDeployRange();
         GameObject troopPrefab = troopSelection.GetSelectedTroopPrefab();
 
-        Instantiate(troopPrefab, GenerateRandomPosition(treePos, deployRange), Quaternion.identity);
+        if(!PauseAndOptionsManager.gameIsPaused)
+            Instantiate(troopPrefab, GenerateRandomPosition(treePos, deployRange), Quaternion.identity);
     }
 
     private Vector3 GenerateRandomPosition(Vector3 treePos, float deployRange)
