@@ -107,13 +107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac79711ed88ae948af91654e9a26195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dwarfPrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+  dwarfPrefab: {fileID: 7088335701904811159, guid: 01db0ae29159ccc44a40243387acc6da,
     type: 3}
-  elvePrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+  elvePrefab: {fileID: 7077017795973848982, guid: c1e3c3bb454ca3f44b5c761a824ddb64,
     type: 3}
-  ogrePrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+  ogrePrefab: {fileID: 1804091698338944282, guid: 4598e224fd135c94981c6f37e87d7e48,
     type: 3}
-  wizardPrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+  wizardPrefab: {fileID: 6038215539379165337, guid: fd9e219bcf7d2e74c803dfda53b66e0e,
     type: 3}
   _minTimeSpawn: 1
   _maxTimeSpawn: 5
@@ -371,13 +371,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac79711ed88ae948af91654e9a26195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dwarfPrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+  dwarfPrefab: {fileID: 7088335701904811159, guid: 01db0ae29159ccc44a40243387acc6da,
     type: 3}
-  elvePrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+  elvePrefab: {fileID: 7077017795973848982, guid: c1e3c3bb454ca3f44b5c761a824ddb64,
     type: 3}
-  ogrePrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+  ogrePrefab: {fileID: 1804091698338944282, guid: 4598e224fd135c94981c6f37e87d7e48,
     type: 3}
-  wizardPrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+  wizardPrefab: {fileID: 6038215539379165337, guid: fd9e219bcf7d2e74c803dfda53b66e0e,
     type: 3}
   _minTimeSpawn: 1
   _maxTimeSpawn: 5

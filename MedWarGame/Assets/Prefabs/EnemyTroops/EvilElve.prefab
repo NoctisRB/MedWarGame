@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 8564508183793510820}
   m_Layer: 0
   m_Name: EvilElve
-  m_TagString: Troop
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
