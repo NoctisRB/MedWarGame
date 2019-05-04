@@ -8,7 +8,6 @@ using UnityEngine.UIElements;
 public class CanvasPauseController : MonoBehaviour
 {
     public AudioSource pauseSound;
-    public GameObject[] buttons;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +17,7 @@ public class CanvasPauseController : MonoBehaviour
 
     void Update()
     {
-        for(int i = 0; i <= buttons.Length - 1; i++)
-        {
-            if (buttons[i].)
-        }
+
     }
     
     public void Resume()
