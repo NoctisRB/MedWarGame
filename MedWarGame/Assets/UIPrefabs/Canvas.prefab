@@ -3220,11 +3220,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PausePanel
       objectReference: {fileID: 0}
-    - target: {fileID: 1453545145508031715, guid: 79e0e34537af3ec41a4101a435e58dc3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1453545145508031742, guid: 79e0e34537af3ec41a4101a435e58dc3,
         type: 3}
       propertyPath: m_LocalPosition.x

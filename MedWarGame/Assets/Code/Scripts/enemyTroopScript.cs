@@ -299,7 +299,14 @@ public class enemyTroopScript : MonoBehaviour
                 default:
                     break;
             }
-            enemy.GetComponent<troopScript>().SetHP(-_attack);
+            if (enemy.tag == "Base")
+            {
+                enemy.GetComponent<treeScript>().SetHP(-_attack);
+            }
+            else
+            {
+                enemy.GetComponent<troopScript>().SetHP(-_attack);
+            }
         }
         else
         {

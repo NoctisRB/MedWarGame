@@ -111,6 +111,18 @@ MonoBehaviour:
     loop: 0
     music: 0
     source: {fileID: 0}
+  - name: Spawn2
+    clip: {fileID: 8300000, guid: 201a10a4d4208104fb2eef82cce28a3d, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: Spawn3
+    clip: {fileID: 8300000, guid: 7d3164c036668ec4f8021b9c8366e2b0, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
 --- !u!114 &1102519843046442162
 MonoBehaviour:
   m_ObjectHideFlags: 0
