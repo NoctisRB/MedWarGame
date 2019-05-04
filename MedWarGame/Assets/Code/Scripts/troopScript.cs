@@ -12,7 +12,10 @@ public class troopScript : MonoBehaviour
     private float _hp = 0;
 
     [SerializeField]
-    private float _attackRange = 0;
+    private float _attackRangeBase = 0;
+
+    [SerializeField]
+    private float _attackRangeTroop = 0;
 
     [SerializeField]
     private float _speed = 0;
