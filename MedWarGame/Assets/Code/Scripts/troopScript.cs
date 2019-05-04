@@ -46,7 +46,7 @@ public class troopScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _destination = new Vector3(10000.0f, 100000.0f, 100000.0f);
         _agent = this.GetComponent<NavMeshAgent>();
         ChangeState(State.Idle);
     }
@@ -65,6 +65,7 @@ public class troopScript : MonoBehaviour
         {
             foreach (var enemy in _enemies)
             {
+                
                 if (Vector3.Distance(_destination, this.transform.position) < _attackRange)
                 {
                     _target = enemy;
@@ -93,10 +94,10 @@ public class troopScript : MonoBehaviour
         {
             foreach (var enemy in _enemies)
             {
-                Debug.Log(Vector3.Distance(_destination, this.transform.position).ToString());
+                
                 if (Vector3.Distance(_destination, this.transform.position) < _attackRange)
                 {
-                    Debug.Log("Change to Attack");
+                    
                     _target = enemy;
                     ChangeState(State.Attack);
                     break;
@@ -105,7 +106,7 @@ public class troopScript : MonoBehaviour
                 {
                     break;
                 }
-                Debug.Log("Change to Attack");
+                
                 ChangeState(State.Idle);
             }
 

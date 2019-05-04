@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 6c2a733f94ba6a742b3ea81f6e17419d
+guid: a9360f989288bdc46b68ad72b661f035
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: attack
+    second: IdleDwarf
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: attack
+      name: IdleDwarf
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 144
+      lastFrame: 338
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
