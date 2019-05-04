@@ -45,12 +45,12 @@ public class treeScript : MonoBehaviour
     {
         Color tempColor = radius.GetComponent<SpriteRenderer>().color;
         float tempColorAlpha = tempColor.a;
-        if (tempColorAlpha >= 0.69f)            
+        if (tempColorAlpha >= 0.49f)            
             alphaIncresing = false;
         if (tempColorAlpha <= 0.31f)
             alphaIncresing = true;
         if (alphaIncresing)
-            tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.7f, 0.05f);
+            tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.5f, 0.05f);
             //tempColorAlpha += 0.6f * Time.deltaTime;
         else
             tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.3f, 0.05f);
