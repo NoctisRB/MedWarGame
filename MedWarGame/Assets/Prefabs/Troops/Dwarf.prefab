@@ -175,7 +175,7 @@ MonoBehaviour:
   _hp: 50
   _attackRange: 5
   _speed: 3
-  _cost: 1
+  _cost: 10
   _deployRange: 3
   _currentState: 0
 --- !u!195 &8938457611857283147

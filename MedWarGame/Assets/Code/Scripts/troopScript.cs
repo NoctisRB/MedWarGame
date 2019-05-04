@@ -166,6 +166,11 @@ public class troopScript : MonoBehaviour
         return _deployRange;
     }
 
+    public float GetCost()
+    {
+        return _cost;
+    }
+
     public void MoveTo(Vector3 pos)
     {
         Debug.Log("MOVE");
