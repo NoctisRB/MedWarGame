@@ -6,6 +6,14 @@ using Random = UnityEngine.Random;
 
 public class EnemyBase : MonoBehaviour
 {
+    private enum Troop
+    {
+        dwarf,
+        elve,
+        ogre,
+        wizard
+    }
+    private Troop spawnedTroop;
 
     [SerializeField]
     private float _minTimeSpawn;
@@ -68,5 +76,12 @@ public class EnemyBase : MonoBehaviour
         //Rest Cost of the spawned troop to _currentEnergy
         Debug.Log("SPAWN");
         return;
+    }
+
+    private Vector3 GenerateRandomPosition(Vector3 treePos, float deployRange)
+    {
+        float xPos = Random.Range(treePos.x - deployRange, treePos.x + deployRange);
+        float zPos = Random.Range(treePos.z - deployRange, treePos.z + deployRange);
+        return new Vector3(xPos, 0, zPos);
     }
 }
