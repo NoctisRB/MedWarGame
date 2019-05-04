@@ -44,7 +44,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171515e0f7e5dde48854f731d6b23e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: BackgroundMenu
+    clip: {fileID: 8300000, guid: 7e69d9390b37cbb408719c2527c259ff, type: 3}
+    volume: 0.7
+    loop: 1
+    music: 1
+    source: {fileID: 0}
+  - name: BattleMusic
+    clip: {fileID: 8300000, guid: 4741b7a8e525c6241b0816bc1c1710c8, type: 3}
+    volume: 0.7
+    loop: 1
+    music: 1
+    source: {fileID: 0}
+  - name: DeathSound
+    clip: {fileID: 8300000, guid: 5283fdcc1a587764b8aee0d768b875ec, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: Footsteps
+    clip: {fileID: 8300000, guid: 24624d5d396c98842b8eb88abf0313c1, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 2f48a34c689702c4282619933fd61678, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: HittingTheTree
+    clip: {fileID: 8300000, guid: ff92225429cc3714b830f80b201f32ec, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: TroopSpawned
+    clip: {fileID: 8300000, guid: 3c32458176af64945be9840d98af3669, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: WizardSpell
+    clip: {fileID: 8300000, guid: caebd0ff65cc31e40be5f1867dcacf66, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
 --- !u!114 &1102519843046442162
 MonoBehaviour:
   m_ObjectHideFlags: 0
