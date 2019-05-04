@@ -38,6 +38,24 @@ public class troopScript : MonoBehaviour
 
     private bool _canAttack = true;
 
+    public enum TroopType
+    {
+        Dwarf,
+        Elve,
+        Orc,
+        Wizard
+    };
+
+    [SerializeField]
+    private GameObject _orcProjectile;
+
+    [SerializeField]
+    private GameObject _elveProjectile;
+
+    [SerializeField]
+    private GameObject _wizardProjectile;
+
+
     public enum State
     {
         Idle,
@@ -47,6 +65,9 @@ public class troopScript : MonoBehaviour
 
     [SerializeField]
     private State _currentState;
+
+    [SerializeField]
+    private TroopType _troopType;
 
     private GameObject[] _enemies;
     private GameObject[] _enemyBases;
@@ -257,6 +278,25 @@ public class troopScript : MonoBehaviour
     {
         if (enemy.activeSelf)
         {
+            switch (_troopType)
+            {
+                case TroopType.Dwarf:
+                    break;
+                case TroopType.Elve:
+                    GameObject Elveprojectile = Instantiate(_elveProjectile);
+                    //Elveprojectile.MoveTo(enemy.transform.position);
+                    break;
+                case TroopType.Orc:
+                    GameObject Orcprojectile = Instantiate(_orcProjectile);
+                    //Orcprojectile.MoveTo(enemy.transform.position);
+                    break;
+                case TroopType.Wizard:
+                    GameObject Wizardprojectile = Instantiate(_wizardProjectile);
+                    //Wizardprojectile.MoveTo(enemy.transform.position);
+                    break;
+                default:
+                    break;
+            }
             enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
         }
         else {
