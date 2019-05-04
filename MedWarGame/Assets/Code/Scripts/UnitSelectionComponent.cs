@@ -28,13 +28,13 @@ public class UnitSelectionComponent : MonoBehaviour
             {
                 GameObject objectHit = hit.transform.gameObject;
                 Debug.Log(objectHit.name);
-                if (hit.collider.gameObject.tag == "Enemy")
+                if (hit.collider.gameObject.tag == "Enemy" || hit.collider.gameObject.tag == "EnemyBase")
                 {
-
+                    
                     if (_selectedObjects != null)
                     {
-                        Debug.Log("Did Hit");
-                        MoveUnits(hit.point, _selectedObjects);
+                        //Debug.Log("Did Hit");
+                        MoveUnits(hit.transform.gameObject, _selectedObjects);
                     }
 
                 }
@@ -133,12 +133,12 @@ public class UnitSelectionComponent : MonoBehaviour
         }
     }
 
-    private void MoveUnits(Vector3 pos, List<GameObject> selectedObjects)
+    private void MoveUnits(GameObject target, List<GameObject> selectedObjects)
     {
 
         foreach (var selectedUnit in selectedObjects)
         {
-            selectedUnit.GetComponent<troopScript>().MoveTo(pos);
+            selectedUnit.GetComponent<troopScript>().MoveTo(target);
         }
         if (_selectedObjects != null)
         {
