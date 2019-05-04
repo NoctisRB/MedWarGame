@@ -15,15 +15,13 @@ public class ProjectileShot : MonoBehaviour
         this.transform.position = bulletEmitter.transform.position;
     }
     
-
     void FixedUpdate()
     {
-        if (cooldown < 0)
+        if (cooldown >= 0)
         {
             this.transform.position += forward.normalized * Time.fixedDeltaTime;
             cooldown -= Time.fixedDeltaTime;
         }
         else Destroy(this);
     }
-    
 }
