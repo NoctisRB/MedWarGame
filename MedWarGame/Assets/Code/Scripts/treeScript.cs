@@ -40,20 +40,15 @@ public class treeScript : MonoBehaviour
     {
         return energyPerSecond;
     }
+
     private void AlphaChanger()
     {
         Color tempColor = radiusSprite.GetComponent<SpriteRenderer>().color;
         float tempColorAlpha = tempColor.a;
-        if (tempColorAlpha >= 0.69f)            
-            alphaIncresing = false;
-        if (tempColorAlpha <= 0.31f)
-            alphaIncresing = true;
-        if (alphaIncresing)
-            tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.7f, 0.05f);
-            //tempColorAlpha += 0.6f * Time.deltaTime;
-        else
-            tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.3f, 0.05f);
-            //tempColorAlpha -= 0.6f * Time.deltaTime;
+        if (tempColorAlpha >= 0.69f) alphaIncresing = false;
+        if (tempColorAlpha <= 0.31f) alphaIncresing = true;
+        if (alphaIncresing) tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.7f, 0.05f);
+        else tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.3f, 0.05f);
 
         tempColor.a = tempColorAlpha;
         radiusSprite.GetComponent<SpriteRenderer>().color = tempColor;
