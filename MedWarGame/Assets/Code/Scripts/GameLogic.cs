@@ -11,8 +11,9 @@ public class GameLogic : MonoBehaviour
     [SerializeField]
     private GameObject _endPanel;
 
-    private Text timerText;
     [SerializeField]
+    private Text timerText;
+
     private float timer;
     
 
