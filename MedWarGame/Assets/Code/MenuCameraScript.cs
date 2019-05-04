@@ -6,8 +6,12 @@ public class MenuCameraScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private Transform selectedPlanet;
-    private bool isPlanetSelected = false;
+    public static bool isPlanetSelected = false;
     private Transform originalPos;
+
+    [SerializeField] private GameObject SettingsButton;
+    [SerializeField] private GameObject ExitButton;
+    [SerializeField] private GameObject BackButton;
 
     void Start()
     {
@@ -17,7 +21,7 @@ public class MenuCameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !isPlanetSelected)
+        if (Input.GetMouseButtonDown(0) && !isPlanetSelected && !MainMenuCanvasScript.playerIsInSettings)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
@@ -26,6 +30,9 @@ public class MenuCameraScript : MonoBehaviour
                 {
                     selectedPlanet = GameObject.Find("CameraPos" + hit.collider.name).transform;
                     isPlanetSelected = true;
+                    BackButton.SetActive(true);
+                    SettingsButton.SetActive(false);
+                    ExitButton.SetActive(false);
                 }                
             }
         }
@@ -37,8 +44,7 @@ public class MenuCameraScript : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && isPlanetSelected) {
-            isPlanetSelected = false;
-            selectedPlanet = null;
+            DeselectPlanet();
         }            
 
         if (selectedPlanet != null)
@@ -46,5 +52,13 @@ public class MenuCameraScript : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, selectedPlanet.position, 0.05f);
             transform.rotation = Quaternion.Lerp(transform.rotation, selectedPlanet.rotation, 0.02f);
         }
+    }
+    public void DeselectPlanet()
+    {
+        isPlanetSelected = false;
+        selectedPlanet = null;
+        SettingsButton.SetActive(true);
+        ExitButton.SetActive(true);
+        BackButton.SetActive(false);
     }
 }
