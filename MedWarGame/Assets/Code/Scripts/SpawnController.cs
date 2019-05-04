@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnController : MonoBehaviour
 {
     [SerializeField] private GameObject treesParent =  default;
-    treeScript[] trees = default;
+    private treeScript[] trees;
     [SerializeField] private TroopSelectionManager troopSelection = default;
     // Start is called before the first frame update
     void Start()
@@ -38,5 +38,10 @@ public class SpawnController : MonoBehaviour
         float xPos = Random.Range(treePos.x - deployRange, treePos.x + deployRange);
         float zPos = Random.Range(treePos.z - deployRange, treePos.z + deployRange);
         return new Vector3(xPos, 0, zPos);
+    }
+
+    public treeScript[] GetTrees()
+    {
+        return trees;
     }
 }
