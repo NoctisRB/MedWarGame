@@ -12,8 +12,10 @@ public class treeScript : MonoBehaviour
     //public GameObject radiusSprite;
     //private Vector3 radiusTargetScale;
     //private bool alphaIncresing = false;
-    public ParticleSystem treeParticles;    
+    public ParticleSystem treeParticles;
 
+    [SerializeField]
+    private float _hp;
     private void Start()
     {
        // radiusTargetScale = radiusSprite.transform.localScale;
@@ -42,5 +44,8 @@ public class treeScript : MonoBehaviour
         return energyPerSecond;
     }
 
-    
+    public void SetHP(float hp)
+    {
+        _hp += hp;
+    }
 }
