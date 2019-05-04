@@ -11,16 +11,18 @@ public class volumeChanger : MonoBehaviour {
     public Slider sfxVol;
     public Slider musicVol;
 
-	void Start () {
-        volume.value = AudioManager.generalVolume;
-        sfxVol.value = AudioManager.sfxVolume;
-        musicVol.value = AudioManager.musicVolume;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        AudioManager.generalVolume = volume.value;
-        AudioManager.sfxVolume = sfxVol.value;
-        AudioManager.musicVolume = musicVol.value;
-	}
+    void Start()
+    {
+    //    volume.value = AudioManager.generalVolume;
+    //    sfxVol.value = AudioManager.sfxVolume;
+    //    musicVol.value = AudioManager.musicVolume;
+    //}
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    AudioManager.generalVolume = volume.value;
+    //    AudioManager.sfxVolume = sfxVol.value;
+    //    AudioManager.musicVolume = musicVol.value;
+    }
 }

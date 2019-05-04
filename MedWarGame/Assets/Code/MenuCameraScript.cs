@@ -22,9 +22,15 @@ public class MenuCameraScript : MonoBehaviour
     [SerializeField] private GameObject ExitButton;
     [SerializeField] private GameObject BackButton;
 
+    [SerializeField] public AudioManager audioManager;
+
     void Start()
     {
         originalPos = GameObject.Find("CameraMainPos").transform;
+
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Play("BackgroundMenu");
+
         textPlanet1.color = new Color(textPlanet1.color.r, textPlanet1.color.g, textPlanet1.color.b, 0);
         textPlanet2.color = new Color(textPlanet1.color.r, textPlanet1.color.g, textPlanet1.color.b, 0);
         textPlanet3.color = new Color(textPlanet1.color.r, textPlanet1.color.g, textPlanet1.color.b, 0);
@@ -66,6 +72,7 @@ public class MenuCameraScript : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, selectedPlanet.position, 0.05f);
             transform.rotation = Quaternion.Lerp(transform.rotation, selectedPlanet.rotation, 0.02f);
+            audioManager.Play("CameraMenuZoom");
         }
 
         if (selectedPlanet)

@@ -53,7 +53,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BattleMusic
     clip: {fileID: 8300000, guid: 4741b7a8e525c6241b0816bc1c1710c8, type: 3}
-    volume: 0.7
+    volume: 1
     loop: 1
     music: 1
     source: {fileID: 0}
@@ -89,6 +89,24 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: WizardSpell
     clip: {fileID: 8300000, guid: caebd0ff65cc31e40be5f1867dcacf66, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: CameraMenuZoom
+    clip: {fileID: 8300000, guid: 3e2f5e5aa3b09b14ca6d358cb7dbe860, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: DeselectedPlanet
+    clip: {fileID: 8300000, guid: 9284fd7e82ed92348be5b1163111b885, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: Spawn
+    clip: {fileID: 8300000, guid: e786e82aba7f1ee45a87d4e4fdc27d35, type: 3}
     volume: 0.7
     loop: 0
     music: 0
