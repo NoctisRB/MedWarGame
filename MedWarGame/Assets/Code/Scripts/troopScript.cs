@@ -177,9 +177,6 @@ public class troopScript : MonoBehaviour
 
             }
             else { ChangeState(State.Idle); }
-
-
-            
             
         }
 
@@ -276,6 +273,11 @@ public class troopScript : MonoBehaviour
 
     private void Hurt(GameObject enemy)
     {
+        if (enemy==null)
+        {
+            _target = null;
+            return;
+        }
         if (enemy.activeSelf)
         {
             switch (_troopType)
@@ -284,20 +286,20 @@ public class troopScript : MonoBehaviour
                     break;
                 case TroopType.Elve:
                     GameObject Elveprojectile = Instantiate(_elveProjectile, this.transform.position, Quaternion.identity);
-                    Elveprojectile.GetComponent<ProjectileShot>().MoveTo(this.transform.forward);
+                    Elveprojectile.GetComponent<ProjectileShot>().MoveTo((_target.transform.position - this.transform.position).normalized);
                     break;
                 case TroopType.Orc:
                     GameObject Orcprojectile = Instantiate(_orcProjectile, this.transform.position, Quaternion.identity);
-                    Orcprojectile.GetComponent<ProjectileShot>().MoveTo(this.transform.forward);
+                    Orcprojectile.GetComponent<ProjectileShot>().MoveTo((_target.transform.position - this.transform.position).normalized);
                     break;
                 case TroopType.Wizard:
                     GameObject Wizardprojectile = Instantiate(_wizardProjectile, this.transform.position, Quaternion.identity);
-                    Wizardprojectile.GetComponent<ProjectileShot>().MoveTo(this.transform.forward);
+                    Wizardprojectile.GetComponent<ProjectileShot>().MoveTo(( _target.transform.position - this.transform.position).normalized);
                     break;
                 default:
                     break;
             }
-            //enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+            enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
         }
         else {
             ChangeState(State.Idle);

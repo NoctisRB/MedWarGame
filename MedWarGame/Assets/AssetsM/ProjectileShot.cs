@@ -45,7 +45,7 @@ public class ProjectileShot : MonoBehaviour
 
     public void MoveTo(Vector3 pos)
     {
-        Debug.Log(pos.ToString());
+        //Debug.Log(pos.ToString());
         _forward = pos;
     }
     public void DestroyThis()
