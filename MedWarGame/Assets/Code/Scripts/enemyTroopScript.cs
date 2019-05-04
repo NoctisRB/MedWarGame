@@ -18,6 +18,9 @@ public class enemyTroopScript : MonoBehaviour
     private float _attackRangeTroop = 0;
 
     [SerializeField]
+    private float _alertRange = 0;
+
+    [SerializeField]
     private float _speed = 0;
 
     [SerializeField]
@@ -33,7 +36,25 @@ public class enemyTroopScript : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
-    private bool _canAttack;
+    private bool _canAttack = true;
+
+    public enum TroopType
+    {
+        Dwarf,
+        Elve,
+        Orc,
+        Wizard
+    };
+
+    [SerializeField]
+    private GameObject _orcProjectile;
+
+    [SerializeField]
+    private GameObject _elveProjectile;
+
+    [SerializeField]
+    private GameObject _wizardProjectile;
+
 
     public enum State
     {
@@ -45,11 +66,11 @@ public class enemyTroopScript : MonoBehaviour
     [SerializeField]
     private State _currentState;
 
+    [SerializeField]
+    private TroopType _troopType;
+
     private GameObject[] _enemies;
     private GameObject[] _enemyBases;
-
-    [SerializeField]
-    private GameObject _this;
 
     // Start is called before the first frame update
     void Start()
@@ -78,9 +99,14 @@ public class enemyTroopScript : MonoBehaviour
             {
                 if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRangeTroop)
                 {
-                    
                     _target = enemy;
                     ChangeState(State.Attack);
+                    break;
+                }
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _alertRange)
+                {
+                    _target = enemy;
+                    ChangeState(State.MoveTo);
                     break;
                 }
             }
@@ -92,10 +118,17 @@ public class enemyTroopScript : MonoBehaviour
                     ChangeState(State.Attack);
                     break;
                 }
+                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _alertRange)
+                {
+                    _target = enemyBase;
+                    ChangeState(State.MoveTo);
+                    break;
+                }
             }
         }
         else if (_currentState == State.Attack)
         {
+
             if (_target == null)
             {
                 ChangeState(State.Idle);
@@ -119,31 +152,31 @@ public class enemyTroopScript : MonoBehaviour
         }
         else if (_currentState == State.MoveTo)
         {
-
-            foreach (var enemy in _enemies)
-            {
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRangeTroop)
-                {
-                    _target = enemy;
-                    ChangeState(State.Attack);
-                    break;
-                }
-            }
-            foreach (var enemyBase in _enemyBases)
-            {
-                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRangeBase)
-                {
-                    _target = enemyBase;
-                    ChangeState(State.Attack);
-                    break;
-                }
-            }
-
             if (_target != null)
             {
                 _agent.destination = _target.transform.position;
+
+                foreach (var enemy in _enemies)
+                {
+                    if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRangeTroop)
+                    {
+                        _target = enemy;
+                        ChangeState(State.Attack);
+                        break;
+                    }
+                }
+                foreach (var enemyBase in _enemyBases)
+                {
+                    if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRangeBase)
+                    {
+                        _target = enemyBase;
+                        ChangeState(State.Attack);
+                        break;
+                    }
+                }
+
             }
-            _agent.destination = _destination;
+            else { ChangeState(State.Idle); }
 
         }
 
@@ -152,6 +185,7 @@ public class enemyTroopScript : MonoBehaviour
     private GameObject[] FindEnemies()
     {
         var Enemies = GameObject.FindGameObjectsWithTag("Troop");
+
         return Enemies;
     }
     private GameObject[] FindEnemyBase()
@@ -182,15 +216,21 @@ public class enemyTroopScript : MonoBehaviour
         switch (nextState)
         {
             case State.Idle:
+                _animator.SetBool("attack", false);
+                _animator.SetBool("run", false);
                 _animator.SetBool("idle", true);
                 _agent.speed = 0;
                 break;
             case State.MoveTo:
+                _animator.SetBool("attack", false);
+                _animator.SetBool("idle", false);
                 _animator.SetBool("run", true);
                 _agent.speed = _speed;
                 _agent.destination = _destination;
                 break;
             case State.Attack:
+                _animator.SetBool("idle", false);
+                _animator.SetBool("run", false);
                 _animator.SetBool("attack", true);
                 _agent.speed = 0;
                 break;
@@ -223,21 +263,47 @@ public class enemyTroopScript : MonoBehaviour
         return _cost;
     }
 
-    public void MoveTo(Vector3 pos)
+    public void MoveTo(GameObject target)
     {
-      
-        SetDestination(pos);
+
+        SetDestination(target.transform.position);
+        _target = target;
         ChangeState(State.MoveTo);
     }
 
     private void Hurt(GameObject enemy)
     {
+        if (enemy == null)
+        {
+            _target = null;
+            return;
+        }
         if (enemy.activeSelf)
         {
-            enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+            switch (_troopType)
+            {
+                case TroopType.Dwarf:
+                    break;
+                case TroopType.Elve:
+                    GameObject Elveprojectile = Instantiate(_elveProjectile, this.transform.position, Quaternion.identity);
+                    Elveprojectile.GetComponent<ProjectileShot>().MoveTo((_target.transform.position - this.transform.position).normalized);
+                    break;
+                case TroopType.Orc:
+                    GameObject Orcprojectile = Instantiate(_orcProjectile, this.transform.position, Quaternion.identity);
+                    Orcprojectile.GetComponent<ProjectileShot>().MoveTo((_target.transform.position - this.transform.position).normalized);
+                    break;
+                case TroopType.Wizard:
+                    GameObject Wizardprojectile = Instantiate(_wizardProjectile, this.transform.position, Quaternion.identity);
+                    Wizardprojectile.GetComponent<ProjectileShot>().MoveTo((_target.transform.position - this.transform.position).normalized);
+                    break;
+                default:
+                    break;
+            }
+            enemy.GetComponent<troopScript>().SetHP(-_attack);
         }
         else
         {
+            ChangeState(State.Idle);
             _target = null;
         }
 

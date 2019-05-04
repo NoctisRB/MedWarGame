@@ -75,7 +75,7 @@ public class EnemyBase : MonoBehaviour
         else
         {
             //Spawn Orc or Wizard
-            Debug.Log("ORC or WIZARD or DWARF or ELF");
+            //Debug.Log("ORC or WIZARD or DWARF or ELF");
             int r = Random.Range(0, 3);
             if (r == 0) spawnedTroop = Troop.dwarf;
             else if (r == 1) spawnedTroop = Troop.elve;
@@ -92,7 +92,7 @@ public class EnemyBase : MonoBehaviour
         Instantiate(GetSpawneableTroop(), GenerateRandomPosition(GetSpawneableTroop().GetComponent<enemyTroopScript>().GetDeployRange()), Quaternion.identity);
         //Rest Cost of the spawned troop to _currentEnergy
         _currentEnergy -= GetSpawneableTroop().GetComponent<enemyTroopScript>().GetCost();
-        Debug.Log("SPAWN");
+        //Debug.Log("SPAWN");
         return;
     }
     

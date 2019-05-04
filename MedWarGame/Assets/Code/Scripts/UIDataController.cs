@@ -13,7 +13,7 @@ public class UIDataController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentEnergyText.text = "Energy: " + Convert.ToString(Mathf.FloorToInt(currencyManager.currentCurrency));
-        energyPerSecText.text = "Energy/sec: " + Convert.ToString(currencyManager.GetCurrentCurrencyPerSec());
+        currentEnergyText.text = ": " + Convert.ToString(Mathf.FloorToInt(currencyManager.currentCurrency));
+        energyPerSecText.text = "/sec: " + Convert.ToString(currencyManager.GetCurrentCurrencyPerSec());
     }
 }
