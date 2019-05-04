@@ -13,9 +13,13 @@ public class MenuCameraScript : MonoBehaviour
     [SerializeField] private GameObject ExitButton;
     [SerializeField] private GameObject BackButton;
 
+    [SerializeField] public AudioManager audioManager;
+
     void Start()
     {
         originalPos = GameObject.Find("CameraMainPos").transform;
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Play("BackgroundMenu");
     }
 
     // Update is called once per frame
@@ -51,6 +55,7 @@ public class MenuCameraScript : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, selectedPlanet.position, 0.05f);
             transform.rotation = Quaternion.Lerp(transform.rotation, selectedPlanet.rotation, 0.02f);
+            audioManager.Play("CameraMenuZoom");
         }
     }
     public void DeselectPlanet()

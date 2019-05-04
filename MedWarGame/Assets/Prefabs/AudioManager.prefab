@@ -93,6 +93,18 @@ MonoBehaviour:
     loop: 0
     music: 0
     source: {fileID: 0}
+  - name: CameraMenuZoom
+    clip: {fileID: 8300000, guid: 3e2f5e5aa3b09b14ca6d358cb7dbe860, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
+  - name: DeselectedPlanet
+    clip: {fileID: 8300000, guid: 9284fd7e82ed92348be5b1163111b885, type: 3}
+    volume: 0.7
+    loop: 0
+    music: 0
+    source: {fileID: 0}
 --- !u!114 &1102519843046442162
 MonoBehaviour:
   m_ObjectHideFlags: 0
