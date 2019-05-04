@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 484172295}
   m_Layer: 8
   m_Name: DwarfTest
-  m_TagString: Untagged
+  m_TagString: Troop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -783,7 +783,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attack: 10
   _hp: 50
-  _attackRange: 5
+  _attackRangeBase: 5
+  _attackRangeTroop: 2
   _speed: 3
   _cost: 1
   _deployRange: 3

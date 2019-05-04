@@ -12,7 +12,10 @@ public class enemyTroopScript : MonoBehaviour
     private float _hp = 0;
 
     [SerializeField]
-    private float _attackRange = 0;
+    private float _attackRangeBase = 0;
+
+    [SerializeField]
+    private float _attackRangeTroop = 0;
 
     [SerializeField]
     private float _speed = 0;
@@ -29,6 +32,8 @@ public class enemyTroopScript : MonoBehaviour
 
     [SerializeField]
     private Animator _animator;
+
+    private bool _canAttack;
 
 
     public enum State
@@ -61,7 +66,7 @@ public class enemyTroopScript : MonoBehaviour
             this.gameObject.SetActive(false);
         }
 
-       
+
         _enemies = FindEnemies();
         _enemyBases = FindEnemyBase();
 
@@ -69,7 +74,7 @@ public class enemyTroopScript : MonoBehaviour
         {
             foreach (var enemy in _enemies)
             {
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRangeTroop)
                 {
                     _target = enemy;
                     ChangeState(State.Attack);
@@ -78,7 +83,7 @@ public class enemyTroopScript : MonoBehaviour
             }
             foreach (var enemyBase in _enemyBases)
             {
-                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRangeBase)
                 {
                     _target = enemyBase;
                     ChangeState(State.Attack);
@@ -94,12 +99,19 @@ public class enemyTroopScript : MonoBehaviour
             }
             foreach (var enemy in _enemies)
             {
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) > _attackRange)
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) > _attackRangeTroop)
                 {
                     break;
                 }
             }
-            
+
+            if (_canAttack)
+            {
+                Hurt(_target);
+                Invoke("ResetHurt", 0f);
+                _canAttack = false;
+            }
+
 
         }
         else if (_currentState == State.MoveTo)
@@ -107,7 +119,7 @@ public class enemyTroopScript : MonoBehaviour
 
             foreach (var enemy in _enemies)
             {
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRangeTroop)
                 {
                     _target = enemy;
                     ChangeState(State.Attack);
@@ -116,7 +128,7 @@ public class enemyTroopScript : MonoBehaviour
             }
             foreach (var enemyBase in _enemyBases)
             {
-                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRangeBase)
                 {
                     _target = enemyBase;
                     ChangeState(State.Attack);
@@ -218,5 +230,9 @@ public class enemyTroopScript : MonoBehaviour
     private void Hurt(GameObject enemy)
     {
         enemy.GetComponent<troopScript>().SetHP(-_attack);
+    }
+    private void ResetHurt(GameObject enemy)
+    {
+        _canAttack = true;
     }
 }
