@@ -12,7 +12,8 @@ public class treeScript : MonoBehaviour
     public GameObject radiusSprite;
     private Vector3 radiusTargetScale;
     private bool alphaIncresing = false;
-    //public ParticleSystem treeParticles;
+
+    public ParticleSystem treeParticles;
 
     private void Start()
     {
