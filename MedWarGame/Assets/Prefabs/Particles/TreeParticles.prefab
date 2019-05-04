@@ -11,13 +11,15 @@ GameObject:
   - component: {fileID: 8250802296161956243}
   - component: {fileID: 9187852984366261316}
   - component: {fileID: 5961063298847320529}
+  - component: {fileID: 1032229440}
+  - component: {fileID: 4832315}
   m_Layer: 0
   m_Name: TreeParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8250802296161956243
 Transform:
   m_ObjectHideFlags: 0
@@ -746,7 +748,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.0001
+      value: 7
       mode: 0
       spread: 0
       speed:
@@ -4752,3 +4754,27 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1032229440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925115215014901486}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627ab6557f660254ab95bc46c17af22e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4832315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925115215014901486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627ab6557f660254ab95bc46c17af22e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
