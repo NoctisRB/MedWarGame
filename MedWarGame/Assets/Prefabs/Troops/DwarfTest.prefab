@@ -785,11 +785,11 @@ MonoBehaviour:
   _hp: 50
   _attackRangeBase: 5
   _attackRangeTroop: 2
+  _alertRange: 10
   _speed: 3
   _cost: 1
   _deployRange: 3
   _animator: {fileID: 4219742948105075710}
-  _me: {fileID: 7088335701904811159}
   _currentState: 0
 --- !u!54 &9089179510503903536
 Rigidbody:
