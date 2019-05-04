@@ -35,7 +35,6 @@ public class enemyTroopScript : MonoBehaviour
 
     private bool _canAttack;
 
-
     public enum State
     {
         Idle,
@@ -48,6 +47,9 @@ public class enemyTroopScript : MonoBehaviour
 
     private GameObject[] _enemies;
     private GameObject[] _enemyBases;
+
+    [SerializeField]
+    private GameObject _this;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +78,7 @@ public class enemyTroopScript : MonoBehaviour
             {
                 if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRangeTroop)
                 {
+                    
                     _target = enemy;
                     ChangeState(State.Attack);
                     break;
@@ -222,14 +225,22 @@ public class enemyTroopScript : MonoBehaviour
 
     public void MoveTo(Vector3 pos)
     {
-        Debug.Log("MOVE");
+      
         SetDestination(pos);
         ChangeState(State.MoveTo);
     }
 
     private void Hurt(GameObject enemy)
     {
-        enemy.GetComponent<troopScript>().SetHP(-_attack);
+        if (enemy.activeSelf)
+        {
+            enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+        }
+        else
+        {
+            _target = null;
+        }
+
     }
     private void ResetHurt()
     {
