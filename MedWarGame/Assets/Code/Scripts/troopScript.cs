@@ -33,6 +33,7 @@ public class troopScript : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
+    private bool _canAttack;
 
     public enum State
     {
@@ -72,7 +73,7 @@ public class troopScript : MonoBehaviour
         {
             foreach (var enemy in _enemies)
             {
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRangeTroop)
                 {
                     _target = enemy;
                     ChangeState(State.Attack);
@@ -81,7 +82,7 @@ public class troopScript : MonoBehaviour
             }
             foreach (var enemyBase in _enemyBases)
             {
-                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRangeBase)
                 {
                     _target = enemyBase;
                     ChangeState(State.Attack);
@@ -97,10 +98,17 @@ public class troopScript : MonoBehaviour
             }
             foreach (var enemy in _enemies)
             {
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) > _attackRange)
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) > _attackRangeTroop)
                 {
                     break;
                 }
+            }
+
+            if (_canAttack)
+            {
+                Hurt(_target);
+                Invoke("ResetHurt", 0f);
+                _canAttack = false;
             }
 
 
@@ -110,7 +118,7 @@ public class troopScript : MonoBehaviour
 
             foreach (var enemy in _enemies)
             {
-                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRangeTroop)
                 {
                     _target = enemy;
                     ChangeState(State.Attack);
@@ -119,7 +127,7 @@ public class troopScript : MonoBehaviour
             }
             foreach (var enemyBase in _enemyBases)
             {
-                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRangeBase)
                 {
                     _target = enemyBase;
                     ChangeState(State.Attack);
@@ -220,6 +228,10 @@ public class troopScript : MonoBehaviour
 
     private void Hurt(GameObject enemy)
     {
-        enemy.GetComponent<troopScript>().SetHP(-_attack);
+        enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+    }
+    private void ResetHurt(GameObject enemy)
+    {
+        _canAttack = true;
     }
 }
