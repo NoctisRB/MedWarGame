@@ -82,4 +82,20 @@ public class TroopSelectionManager : MonoBehaviour
         else if (selectedTroop == Troop.ogre) return ogrePrefab;
         else return wizardPrefab;
     }
+
+    private IEnumerator AnimateButton(GameObject button, bool up)
+    {
+        if (up)
+        {
+            float yPos = Mathf.Lerp(button.GetComponent<RectTransform>().anchoredPosition.y, -121, 0.1f);
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(button.GetComponent<RectTransform>().anchoredPosition.x, yPos);
+            if(button.GetComponent<RectTransform>().anchoredPosition.y <= -121.5) yield return null;
+        }
+        else
+        {
+            float yPos = Mathf.Lerp(button.GetComponent<RectTransform>().anchoredPosition.y, -185, 0.1f);
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(button.GetComponent<RectTransform>().anchoredPosition.x, yPos);
+            if (button.GetComponent<RectTransform>().anchoredPosition.y >= -174.5) yield return null;
+        }
+    }
 }
