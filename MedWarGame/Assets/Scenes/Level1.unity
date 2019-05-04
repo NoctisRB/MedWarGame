@@ -388,6 +388,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionCirclePrefab: {fileID: 0}
+--- !u!1 &1024635975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7018825989614189878, guid: 266bf0b17bb5b214b881fb31f8ee7721,
+    type: 3}
+  m_PrefabInstance: {fileID: 2135333458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1024635982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024635975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac79711ed88ae948af91654e9a26195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dwarfPrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+    type: 3}
+  elvePrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+    type: 3}
+  ogrePrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+    type: 3}
+  wizardPrefab: {fileID: 7088335701904811159, guid: d83376986b567494cb7a729c556d1e3d,
+    type: 3}
+  _minTimeSpawn: 1
+  _maxTimeSpawn: 5
+  _energyPerSecond: 5
+  _currentEnergy: 25
 --- !u!1 &1118824951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 829941369003195353, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
@@ -493,7 +523,7 @@ PrefabInstance:
     - target: {fileID: 7018825989614189878, guid: 266bf0b17bb5b214b881fb31f8ee7721,
         type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyBase
       objectReference: {fileID: 0}
     - target: {fileID: 615028926683588155, guid: 266bf0b17bb5b214b881fb31f8ee7721,
         type: 3}
@@ -553,22 +583,32 @@ PrefabInstance:
     - target: {fileID: 5830286324931830435, guid: 266bf0b17bb5b214b881fb31f8ee7721,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.1
+      value: -5.5154
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830286324931830435, guid: 266bf0b17bb5b214b881fb31f8ee7721,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.0689
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830286324931830435, guid: 266bf0b17bb5b214b881fb31f8ee7721,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -56.939
       objectReference: {fileID: 0}
     - target: {fileID: 3057013184968307886, guid: 266bf0b17bb5b214b881fb31f8ee7721,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9
+      value: 0.461
       objectReference: {fileID: 0}
     - target: {fileID: 3057013184968307886, guid: 266bf0b17bb5b214b881fb31f8ee7721,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.2
+      value: 9.0689
       objectReference: {fileID: 0}
     - target: {fileID: 3057013184968307886, guid: 266bf0b17bb5b214b881fb31f8ee7721,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4
+      value: -0.0154
       objectReference: {fileID: 0}
     - target: {fileID: 2009175817827003195, guid: 266bf0b17bb5b214b881fb31f8ee7721,
         type: 3}
@@ -716,77 +756,3 @@ PrefabInstance:
       objectReference: {fileID: 963194227}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59cbf2f6b119fc44a9db0c0d59385d79, type: 3}
---- !u!1001 &7253872216084397825
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6038215539379165337, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_Name
-      value: Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320412981884791434, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 800892051287836656, guid: da9c8409761a56146be295e73a4ecdac,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: fdf1c9b39eae8044aadbfdb9cb9011e8, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: da9c8409761a56146be295e73a4ecdac, type: 3}
