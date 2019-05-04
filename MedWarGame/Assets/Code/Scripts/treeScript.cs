@@ -20,6 +20,7 @@ public class treeScript : MonoBehaviour
     }
     private void Update()
     {
+
         if (isSelected)
         {
             radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, radiusTargetScale, 0.1f * 60 * Time.deltaTime);
