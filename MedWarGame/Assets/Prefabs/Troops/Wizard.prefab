@@ -173,9 +173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attack: 10
   _hp: 20
-  _attackRange: 30
+  _attackRange: 20
   _speed: 6
-  _cost: 30
+  _cost: 25
   _deployRange: 6
   _currentState: 0
 --- !u!195 &8938457611857283147

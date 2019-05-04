@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attack: 15
   _hp: 30
-  _attackRange: 20
+  _attackRange: 15
   _speed: 8
   _cost: 20
   _deployRange: 7
