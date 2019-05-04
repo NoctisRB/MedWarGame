@@ -35,7 +35,7 @@ public class GameLogic : MonoBehaviour
                 string minutes = ((int)timer / 60).ToString();
                 string seconds = Mathf.Round((timer % 60)).ToString();
 
-                timerText.text = "Your time was\n " + minutes + ":" + seconds;
+                timerText.text = "Your time was\n " + minutes + "' " + seconds + "''";
                 _endPanel.SetActive(true);
                 _ended = true;
             }

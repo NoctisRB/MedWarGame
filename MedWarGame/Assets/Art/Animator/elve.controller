@@ -175,7 +175,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ogreAtack
+  m_Name: elveAtack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -229,7 +229,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ogreIdle
+  m_Name: elveIdle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -244,7 +244,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 88c5287d8ab31214f919c4f36b6713f2,
+  m_Motion: {fileID: -203655887218126122, guid: 863fc584c2f3ac24ca38b29f62a57dc4,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -283,7 +283,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ogreRun
+  m_Name: elveRun
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -298,7 +298,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 5f497240882a5674c8744a557963f4ab,
+  m_Motion: {fileID: -203655887218126122, guid: 5ca0b916055cced46816940557e6c321,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
