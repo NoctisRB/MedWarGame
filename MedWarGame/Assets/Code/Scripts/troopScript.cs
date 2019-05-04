@@ -12,7 +12,10 @@ public class troopScript : MonoBehaviour
     private float _hp = 0;
 
     [SerializeField]
-    private float _attackRange = 0;
+    private float _attackRangeBase = 0;
+
+    [SerializeField]
+    private float _attackRangeTroop = 0;
 
     [SerializeField]
     private float _speed = 0;
@@ -30,7 +33,7 @@ public class troopScript : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
-    
+
     public enum State
     {
         Idle,
@@ -39,9 +42,10 @@ public class troopScript : MonoBehaviour
     };
 
     [SerializeField]
-    private State _currentState; 
+    private State _currentState;
 
     private GameObject[] _enemies;
+    private GameObject[] _enemyBases;
 
     // Start is called before the first frame update
     void Start()
@@ -54,21 +58,32 @@ public class troopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_hp<= 0)
+
+        if (_hp <= 0)
         {
             this.gameObject.SetActive(false);
         }
 
+
         _enemies = FindEnemies();
+        _enemyBases = FindEnemyBase();
 
         if (_currentState == State.Idle)
         {
             foreach (var enemy in _enemies)
             {
-                
-                if (Vector3.Distance(_destination, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
                 {
                     _target = enemy;
+                    ChangeState(State.Attack);
+                    break;
+                }
+            }
+            foreach (var enemyBase in _enemyBases)
+            {
+                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRange)
+                {
+                    _target = enemyBase;
                     ChangeState(State.Attack);
                     break;
                 }
@@ -84,31 +99,39 @@ public class troopScript : MonoBehaviour
             {
                 if (Vector3.Distance(enemy.transform.position, this.transform.position) > _attackRange)
                 {
-                    break;  
+                    break;
                 }
-                
-                
             }
+
+
         }
         else if (_currentState == State.MoveTo)
         {
+
             foreach (var enemy in _enemies)
             {
-                
-                if (Vector3.Distance(_destination, this.transform.position) < _attackRange)
+                if (Vector3.Distance(enemy.transform.position, this.transform.position) < _attackRange)
                 {
-                    
                     _target = enemy;
                     ChangeState(State.Attack);
                     break;
                 }
-                else if (Vector3.Distance(_destination, this.transform.position) > _attackRange)
+            }
+            foreach (var enemyBase in _enemyBases)
+            {
+                if (Vector3.Distance(enemyBase.transform.position, this.transform.position) < _attackRange)
                 {
+                    _target = enemyBase;
+                    ChangeState(State.Attack);
                     break;
                 }
-                
-                ChangeState(State.Idle);
             }
+
+            if (_target != null)
+            {
+                _agent.destination = _target.transform.position;
+            }
+            _agent.destination = _destination;
 
         }
 
@@ -118,6 +141,11 @@ public class troopScript : MonoBehaviour
     {
         var Enemies = GameObject.FindGameObjectsWithTag("Enemy");
         return Enemies;
+    }
+    private GameObject[] FindEnemyBase()
+    {
+        var EnemyBases = GameObject.FindGameObjectsWithTag("EnemyBase");
+        return EnemyBases;
     }
 
     public void ChangeState(State nextState)
@@ -148,11 +176,11 @@ public class troopScript : MonoBehaviour
             case State.MoveTo:
                 _animator.SetBool("run", true);
                 _agent.speed = _speed;
-                _agent.destination = _destination;         
+                _agent.destination = _destination;
                 break;
             case State.Attack:
                 _animator.SetBool("attack", true);
-                _agent.speed = 0;             
+                _agent.speed = 0;
                 break;
             default:
                 break;
@@ -190,4 +218,8 @@ public class troopScript : MonoBehaviour
         ChangeState(State.MoveTo);
     }
 
+    private void Hurt(GameObject enemy)
+    {
+        enemy.GetComponent<troopScript>().SetHP(-_attack);
+    }
 }
