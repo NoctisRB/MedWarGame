@@ -13,12 +13,6 @@ public class SpawnController : MonoBehaviour
         trees = treesParent.GetComponentsInChildren<treeScript>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private treeScript GetActiveTree()
     {
         foreach(treeScript t in trees)
