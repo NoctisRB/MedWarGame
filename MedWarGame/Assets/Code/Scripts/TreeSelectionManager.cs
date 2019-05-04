@@ -17,7 +17,7 @@ public class TreeSelectionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !PauseAndOptionsManager.gameIsPaused)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
@@ -30,7 +30,7 @@ public class TreeSelectionManager : MonoBehaviour
                        t.isSelected = false;
                     }
                     selectedTree.isSelected = true;
-                }
+                }                
             }
         }
     }
