@@ -177,9 +177,6 @@ public class troopScript : MonoBehaviour
 
             }
             else { ChangeState(State.Idle); }
-
-
-            
             
         }
 
@@ -276,6 +273,11 @@ public class troopScript : MonoBehaviour
 
     private void Hurt(GameObject enemy)
     {
+        if (enemy==null)
+        {
+            _target = null;
+            return;
+        }
         if (enemy.activeSelf)
         {
             switch (_troopType)
@@ -297,7 +299,7 @@ public class troopScript : MonoBehaviour
                 default:
                     break;
             }
-            //enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+            enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
         }
         else {
             ChangeState(State.Idle);

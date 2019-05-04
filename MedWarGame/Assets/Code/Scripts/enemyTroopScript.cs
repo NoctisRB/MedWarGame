@@ -297,7 +297,7 @@ public class enemyTroopScript : MonoBehaviour
                 default:
                     break;
             }
-            //enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+            enemy.GetComponent<troopScript>().SetHP(-_attack);
         }
         else
         {
