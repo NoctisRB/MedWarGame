@@ -166,13 +166,14 @@ GameObject:
   - component: {fileID: 4087391715811397927}
   - component: {fileID: 4500056869055838444}
   - component: {fileID: 4594399364295029271}
+  - component: {fileID: 2682539128942055757}
   m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4087391715811397927
 Transform:
   m_ObjectHideFlags: 0
@@ -232,6 +233,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &2682539128942055757
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316277006217566132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.50000006
+  m_Height: 1.0000002
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1481691645068846433
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +786,7 @@ GameObject:
   - component: {fileID: -6892231980375138924}
   - component: {fileID: 5486981013624818164}
   - component: {fileID: -5756604014094100703}
+  - component: {fileID: 6556268499765691751}
   m_Layer: 0
   m_Name: EvilWizard
   m_TagString: Enemy
@@ -878,6 +894,20 @@ MonoBehaviour:
     type: 3}
   _currentState: 0
   _troopType: 3
+--- !u!136 &6556268499765691751
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038215539379165337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.11
+  m_Height: 0.42
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!1 &6049948164732579068
 GameObject:
   m_ObjectHideFlags: 0
