@@ -26,6 +26,7 @@ public class MenuCameraScript : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         originalPos = GameObject.Find("CameraMainPos").transform;
 
         audioManager = FindObjectOfType<AudioManager>();
