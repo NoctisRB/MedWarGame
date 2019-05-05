@@ -21,8 +21,12 @@ public class GameManager : MonoBehaviour
         foreach(treeScript t in trees)
         {
             if (t.isPlayer && t.GetHp() <= 0) Lose();
-            if (t.isPlayer && t.GetHp() <= 0) allDestroyed = true;
-            if (!t.isPlayer && t.GetHp() != 0) allDestroyed = false;
+            if (!t.isPlayer && t.GetHp() > 0)
+            {
+                allDestroyed = false;
+                return;
+            }
+            if (!t.isPlayer && t.GetHp() <= 0) allDestroyed = true;
         }
         if (allDestroyed) Win();
     }
