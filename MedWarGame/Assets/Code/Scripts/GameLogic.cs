@@ -21,7 +21,7 @@ public class GameLogic : MonoBehaviour
     void Start()
     {
         _endPanel.SetActive(false);
-       
+        Time.timeScale = 1;
 
     }
 

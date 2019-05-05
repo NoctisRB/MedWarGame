@@ -2135,6 +2135,11 @@ PrefabInstance:
       propertyPath: currencyManager
       value: 
       objectReference: {fileID: 808265082}
+    - target: {fileID: 8951921912995439803, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3837506558123651868, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
