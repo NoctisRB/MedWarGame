@@ -389,7 +389,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0fe57dae9b3f430458a79e7e416e8958, type: 2}
+  - {fileID: 2100000, guid: f2233ec8ffa602c4c8ab9db3007f6fa1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1032,7 +1032,6 @@ GameObject:
   - component: {fileID: 2767734222982576326}
   - component: {fileID: -1755077824958851661}
   - component: {fileID: 8564508183793510820}
-  - component: {fileID: 3635376871099695588}
   m_Layer: 0
   m_Name: EvilElve
   m_TagString: Enemy
@@ -1144,7 +1143,7 @@ MonoBehaviour:
   _attackRangeBase: 8
   _attackRangeTroop: 8
   _alertRange: 10
-  _speed: 8
+  _speed: 6
   _cost: 20
   _deployRange: 7
   _animator: {fileID: 4244576857810387199}
@@ -1156,20 +1155,6 @@ MonoBehaviour:
     type: 3}
   _currentState: 0
   _troopType: 1
---- !u!136 &3635376871099695588
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7077017795973848982}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.11
-  m_Height: 0.43
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.23, z: 0}
 --- !u!1 &7135524144353993423
 GameObject:
   m_ObjectHideFlags: 0

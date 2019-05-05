@@ -117,7 +117,7 @@ MonoBehaviour:
     type: 3}
   _minTimeSpawn: 1
   _maxTimeSpawn: 5
-  _energyPerSecond: 5
+  _energyPerSecond: 3
   _currentEnergy: 25
 --- !u!1 &4582620671114524249
 GameObject:
@@ -381,7 +381,7 @@ MonoBehaviour:
     type: 3}
   _minTimeSpawn: 1
   _maxTimeSpawn: 5
-  _energyPerSecond: 5
+  _energyPerSecond: 3
   _currentEnergy: 25
 --- !u!1001 &167267985
 PrefabInstance:
@@ -817,6 +817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7089476
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882085738037727943, guid: 2496a07fe5cc8f24197fd3c4110f373c,
+        type: 3}
+      propertyPath: energyPerSecond
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3882085738037727943, guid: 2496a07fe5cc8f24197fd3c4110f373c,
         type: 3}

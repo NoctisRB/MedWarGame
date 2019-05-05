@@ -803,7 +803,6 @@ GameObject:
   - component: {fileID: 1234466795829881695}
   - component: {fileID: -7236227380569570190}
   - component: {fileID: 484172295}
-  - component: {fileID: 7145550498053614478}
   m_Layer: 8
   m_Name: EvilDwarf
   m_TagString: Enemy
@@ -927,19 +926,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!135 &7145550498053614478
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7088335701904811159}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.11
-  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!1 &7219617292636133038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1004,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0fe57dae9b3f430458a79e7e416e8958, type: 2}
+  - {fileID: 2100000, guid: f2233ec8ffa602c4c8ab9db3007f6fa1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
