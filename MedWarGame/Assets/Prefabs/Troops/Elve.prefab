@@ -1093,7 +1093,7 @@ MonoBehaviour:
   _attackRangeTroop: 8
   _alertRange: 10
   _speed: 6
-  _cost: 20
+  _cost: 15
   _deployRange: 7
   _animator: {fileID: 4244576857810387199}
   _orcProjectile: {fileID: 6208929549020565185, guid: 7bc991e7b6b7a0545b0d2db62fcdef79,
