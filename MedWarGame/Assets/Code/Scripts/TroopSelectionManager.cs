@@ -87,10 +87,7 @@ public class TroopSelectionManager : MonoBehaviour
                     else StartCoroutine(AnimateButton(result.gameObject, true));
                 }
             }
-            Debug.Log(result.gameObject.name);
         }
-        
-        
     }
 
     private void InstantiateDwarf()
