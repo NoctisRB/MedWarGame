@@ -26,6 +26,7 @@ public class CanvasPauseController : MonoBehaviour
     }
     public void MainMenu()
     {
-        //Load MainMenu Scene
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
     }
 }
