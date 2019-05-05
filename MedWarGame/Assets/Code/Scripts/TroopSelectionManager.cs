@@ -38,6 +38,9 @@ public class TroopSelectionManager : MonoBehaviour
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
 
+    private GameObject buttonsParent;
+    private buttonAnimation[] buttons;
+
     void Start()
     {
         dwarf = dwarfPrefab.GetComponent<troopScript>();
@@ -54,6 +57,9 @@ public class TroopSelectionManager : MonoBehaviour
 
         m_Raycaster = GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
+
+        buttonsParent = this.gameObject;
+        buttons = buttonsParent.GetComponentsInChildren<buttonAnimation>();
     }
 
     private void Update()
@@ -64,7 +70,13 @@ public class TroopSelectionManager : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
         m_Raycaster.Raycast(m_PointerEventData, results);
 
-        foreach(RaycastResult result in results)
+        foreach (buttonAnimation b in buttons)
+        {
+            if (!b.gameObject.GetComponent<buttonAnimation>().isMoving && !b.gameObject.GetComponent<buttonAnimation>().up)
+                StartCoroutine(AnimateButton(b.gameObject, false));
+        }
+
+        foreach (RaycastResult result in results)
         {
             if(result.gameObject.tag == "TroopButton")
             {
@@ -75,7 +87,10 @@ public class TroopSelectionManager : MonoBehaviour
                     else StartCoroutine(AnimateButton(result.gameObject, true));
                 }
             }
+            Debug.Log(result.gameObject.name);
         }
+        
+        
     }
 
     private void InstantiateDwarf()
@@ -119,7 +134,7 @@ public class TroopSelectionManager : MonoBehaviour
     {
         if (up)
         {
-            float yPos = Mathf.Lerp(button.GetComponent<RectTransform>().anchoredPosition.y, -121, 0.2f);
+            float yPos = Mathf.Lerp(button.GetComponent<RectTransform>().anchoredPosition.y, -76, 0.2f);
             button.GetComponent<RectTransform>().anchoredPosition = new Vector2(button.GetComponent<RectTransform>().anchoredPosition.x, yPos);
             if(button.GetComponent<RectTransform>().anchoredPosition.y <= -121.5) yield return null;
         }
