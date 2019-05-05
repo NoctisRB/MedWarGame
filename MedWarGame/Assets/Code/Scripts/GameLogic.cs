@@ -25,6 +25,9 @@ public class GameLogic : MonoBehaviour
 
     void Update()
     {
+
+        _enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        _enemyBases = GameObject.FindGameObjectsWithTag("EnemyBase");
         if (Input.GetKey(KeyCode.Space))
         {
             if (_enemies == null && _enemyBases == null)
@@ -49,8 +52,6 @@ public class GameLogic : MonoBehaviour
             timer += Time.deltaTime;
         }
         
-
-        _enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        _enemyBases = GameObject.FindGameObjectsWithTag("EnemyBase");   
+  
     }
 }
