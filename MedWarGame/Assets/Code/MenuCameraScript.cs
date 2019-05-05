@@ -61,8 +61,8 @@ public class MenuCameraScript : MonoBehaviour
 
         if (!isPlanetSelected)
         {
-            transform.position = Vector3.Lerp(transform.position, originalPos.position, 0.05f);
-            transform.rotation = Quaternion.Lerp(transform.rotation, originalPos.rotation, 0.02f);            
+            transform.position = Vector3.Lerp(transform.position, originalPos.position, 0.05f * 60 * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, originalPos.rotation, 0.02f * 60 * Time.deltaTime);            
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && isPlanetSelected) {
@@ -71,8 +71,8 @@ public class MenuCameraScript : MonoBehaviour
 
         if (selectedPlanet != null)
         {
-            transform.position = Vector3.Lerp(transform.position, selectedPlanet.position, 0.05f);
-            transform.rotation = Quaternion.Lerp(transform.rotation, selectedPlanet.rotation, 0.02f);
+            transform.position = Vector3.Lerp(transform.position, selectedPlanet.position, 0.05f * 60 * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, selectedPlanet.rotation, 0.02f * 60 * Time.deltaTime);
             audioManager.Play("CameraMenuZoom");
         }
 
