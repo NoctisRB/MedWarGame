@@ -784,7 +784,6 @@ GameObject:
   - component: {fileID: 7320412981884791434}
   - component: {fileID: 800892051287836656}
   - component: {fileID: -6892231980375138924}
-  - component: {fileID: 5486981013624818164}
   - component: {fileID: -5756604014094100703}
   m_Layer: 0
   m_Name: EvilWizard
@@ -851,19 +850,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5486981013624818164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6038215539379165337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee609373a40fa54d81519d44c3f306a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionCircle: {fileID: 1316277006217566132}
 --- !u!114 &-5756604014094100703
 MonoBehaviour:
   m_ObjectHideFlags: 0
