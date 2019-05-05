@@ -94,3 +94,4 @@ MonoBehaviour:
   isPlayer: 1
   isSelected: 0
   treeParticles: {fileID: 0}
+  _hp: 0
