@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
   m_Name: Grain
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -21,13 +21,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.271
+    value: 0.26
   size:
     overrideState: 1
-    value: 1
+    value: 0.68
   lumContrib:
     overrideState: 1
-    value: 0.8
+    value: 0.45
 --- !u!114 &-2082925775823965734
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -112,40 +112,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   intensity:
     overrideState: 1
-    value: 2.77
+    value: 8.3
   threshold:
     overrideState: 1
-    value: 4.09
+    value: 0.98
   softKnee:
-    overrideState: 0
-    value: 0.5
+    overrideState: 1
+    value: 0.61
   clamp:
-    overrideState: 0
-    value: 65472
+    overrideState: 1
+    value: 0.85
   diffusion:
     overrideState: 0
-    value: 7
+    value: 2.28
   anamorphicRatio:
     overrideState: 0
-    value: 0
+    value: 1
   color:
     overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 1, g: 0.9292453, b: 0.9292453, a: 1}
   fastMode:
     overrideState: 0
     value: 0
   dirtTexture:
-    overrideState: 0
-    value: {fileID: 0}
+    overrideState: 1
+    value: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     defaultState: 1
   dirtIntensity:
-    overrideState: 0
+    overrideState: 1
     value: 0
 --- !u!114 &5008713700646693809
 MonoBehaviour:
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -168,12 +168,12 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.04
+    value: 4
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
   ambientOnly:
-    overrideState: 1
+    overrideState: 0
     value: 1
   noiseFilterTolerance:
     overrideState: 0
@@ -186,10 +186,10 @@ MonoBehaviour:
     value: -12
   thicknessModifier:
     overrideState: 1
-    value: 2.09
+    value: 4.83
   directLightingStrength:
     overrideState: 1
-    value: 0
+    value: 1
   radius:
     overrideState: 0
     value: 0.25
