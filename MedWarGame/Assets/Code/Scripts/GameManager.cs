@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject defeatPanel;
     private bool allDestroyed;
 
+    [SerializeField]
+    private GameObject[] _bars;
+
 
     [SerializeField]
     private Text timerText;
@@ -48,6 +51,10 @@ public class GameManager : MonoBehaviour
 
     private void Win()
     {
+        foreach (var bar in _bars)
+        {
+            bar.SetActive(false);
+        }
         Time.timeScale = 0;
 
         string minutes = ((int)timer / 60).ToString();
