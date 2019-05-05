@@ -326,10 +326,25 @@ public class troopScript : MonoBehaviour
 
             if (enemy.tag == "EnemyBase")
             {
-                enemy.GetComponent<treeScript>().SetHP(-_attack);
+                if (enemy.GetComponent<treeScript>().GetHp() <= 0)
+                {
+                    enemy.tag = "Finish";
+                    _target = null;
+                    return;
+                }
+                else
+                {
+                    enemy.GetComponent<treeScript>().SetHP(-_attack);
+                }
             }
             else
             {
+                if (enemy.GetComponent<enemyTroopScript>().GetHP() <= 0)
+                {
+                    enemy.tag = "Finish";
+                    _target = null;
+                    return;
+                }
                 enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
             }
         }
@@ -342,5 +357,10 @@ public class troopScript : MonoBehaviour
     private void ResetHurt()
     {
         _canAttack = true;
+    }
+
+    public float GetHP()
+    {
+        return _hp;
     }
 }
