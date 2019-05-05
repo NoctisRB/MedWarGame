@@ -9,23 +9,25 @@ public class treeScript : MonoBehaviour
 
     public bool isPlayer = true;
     public bool isSelected;
-    public GameObject radiusSprite;
-    private Vector3 radiusTargetScale;
-    private bool alphaIncresing = false;
-    public ParticleSystem treeParticles;    
+    //public GameObject radiusSprite;
+    //private Vector3 radiusTargetScale;
+    //private bool alphaIncresing = false;
+    public ParticleSystem treeParticles;
 
+    [SerializeField]
+    private float _hp;
     private void Start()
     {
-        radiusTargetScale = radiusSprite.transform.localScale;
-        radiusSprite.transform.localScale = Vector3.zero;
+       // radiusTargetScale = radiusSprite.transform.localScale;
+       // radiusSprite.transform.localScale = Vector3.zero;
     }
     private void Update()
     {
 
         if (isSelected)
         {
-            radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, radiusTargetScale, 0.1f * 60 * Time.deltaTime);
-            AlphaChanger();
+            //radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, radiusTargetScale, 0.1f * 60 * Time.deltaTime);
+           // AlphaChanger();
             treeParticles.gameObject.SetActive(true);
             ParticleSystem.ShapeModule treeParticlesShapeModule = treeParticles.shape;
             treeParticlesShapeModule.radius = Mathf.Lerp(treeParticlesShapeModule.radius, 7f, 0.1f * 60 * Time.deltaTime);
@@ -33,7 +35,7 @@ public class treeScript : MonoBehaviour
         }
         else
         {
-            radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, Vector3.zero, 0.1f * 60 * Time.deltaTime);
+           // radiusSprite.transform.localScale = Vector3.Lerp(radiusSprite.transform.localScale, Vector3.zero, 0.1f * 60 * Time.deltaTime);
             treeParticles.gameObject.SetActive(false);
         }
     }
@@ -42,16 +44,8 @@ public class treeScript : MonoBehaviour
         return energyPerSecond;
     }
 
-    private void AlphaChanger()
+    public void SetHP(float hp)
     {
-        Color tempColor = radiusSprite.GetComponent<SpriteRenderer>().color;
-        float tempColorAlpha = tempColor.a;
-
-        if (tempColorAlpha >= 0.69f) alphaIncresing = false;
-        if (tempColorAlpha <= 0.41f) alphaIncresing = true;
-        if (alphaIncresing) tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.7f, 0.05f * 60 * Time.deltaTime);
-        else tempColorAlpha = Mathf.Lerp(tempColorAlpha, 0.3f, 0.05f * 60 * Time.deltaTime);
-        tempColor.a = tempColorAlpha;
-        radiusSprite.GetComponent<SpriteRenderer>().color = tempColor;
+        _hp += hp;
     }
 }

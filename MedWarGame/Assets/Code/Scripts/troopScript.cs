@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio; //ToDouble
 
 public class troopScript : MonoBehaviour
 {
@@ -55,6 +56,8 @@ public class troopScript : MonoBehaviour
     [SerializeField]
     private GameObject _wizardProjectile;
 
+    [HideInInspector]
+    public AudioManager _audioManager; //ToDouble
 
     public enum State
     {
@@ -78,12 +81,27 @@ public class troopScript : MonoBehaviour
         _destination = new Vector3(10000.0f, 100000.0f, 100000.0f);
         _agent = this.GetComponent<NavMeshAgent>();
         ChangeState(State.Idle);
+        _audioManager = FindObjectOfType<AudioManager>();
+        switch (Random.Range(0,3))
+        {
+            case 1:
+                _audioManager.Play("Spawn");
+                break;
+            case 2:
+                _audioManager.Play("Spawn2");
+                break;
+            case 3:
+                _audioManager.Play("Spawn3");
+                break;
+            default:
+                _audioManager.Play("Spawn");
+                break;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (_hp <= 0)
         {
             this.gameObject.SetActive(false);
@@ -154,7 +172,10 @@ public class troopScript : MonoBehaviour
         {
             if (_target != null)
             {
-                _agent.destination = _target.transform.position;
+                if (_agent.isActiveAndEnabled)
+                {
+                    _agent.destination = _destination;
+                }
 
                 foreach (var enemy in _enemies)
                 {
@@ -226,7 +247,10 @@ public class troopScript : MonoBehaviour
                 _animator.SetBool("idle", false);
                 _animator.SetBool("run", true);
                 _agent.speed = _speed;
-                _agent.destination = _destination;
+                if (_agent.isActiveAndEnabled)
+                {
+                    _agent.destination = _destination;
+                }
                 break;
             case State.Attack:
                 _animator.SetBool("idle", false);
@@ -299,7 +323,15 @@ public class troopScript : MonoBehaviour
                 default:
                     break;
             }
-            enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+
+            if (enemy.tag == "EnemyBase")
+            {
+                enemy.GetComponent<treeScript>().SetHP(-_attack);
+            }
+            else
+            {
+                enemy.GetComponent<enemyTroopScript>().SetHP(-_attack);
+            }
         }
         else {
             ChangeState(State.Idle);

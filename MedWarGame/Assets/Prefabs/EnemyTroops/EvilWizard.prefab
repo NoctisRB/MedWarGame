@@ -870,11 +870,11 @@ MonoBehaviour:
   _cost: 30
   _deployRange: 6
   _animator: {fileID: 800892051287836656}
-  _orcProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
+  _orcProjectile: {fileID: 6208929549020565185, guid: 3f5b2247b09b0d64eb58a596e7ce4ac5,
     type: 3}
-  _elveProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
+  _elveProjectile: {fileID: 6208929549020565185, guid: 7e8a2261315453e49a11d879a7c9f6f3,
     type: 3}
-  _wizardProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
+  _wizardProjectile: {fileID: 6208929549020565185, guid: b235a4ef539b5584c86e8338fa329959,
     type: 3}
   _currentState: 0
   _troopType: 3
