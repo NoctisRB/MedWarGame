@@ -83,8 +83,18 @@ public class MenuCameraScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
                     SceneManager.LoadScene("Level1");
             }
-            else if (level == 2) StartCoroutine(Appear(textPlanet2, 1f));
-            else if (level == 3) StartCoroutine(Appear(textPlanet3, 1f));
+            else if (level == 2)
+            {
+                StartCoroutine(Appear(textPlanet2, 1f));
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+                    SceneManager.LoadScene("Level2");
+            }
+            else if (level == 3)
+            {
+                StartCoroutine(Appear(textPlanet3, 1f));
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+                    SceneManager.LoadScene("Level3");
+            }
             else if (level == 4) StartCoroutine(Appear(textPlanet4, 1f));
             else if (level == 5) StartCoroutine(Appear(textPlanet5, 1f));
         }

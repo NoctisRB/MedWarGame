@@ -44,6 +44,11 @@ public class treeScript : MonoBehaviour
         return energyPerSecond;
     }
 
+    public float GetHp()
+    {
+        return _hp;
+    }
+
     public void SetHP(float hp)
     {
         _hp += hp;
