@@ -26,6 +26,7 @@ public class MenuCameraScript : MonoBehaviour
 
     void Start()
     {
+        isPlanetSelected = false;
         Time.timeScale = 1;
         originalPos = GameObject.Find("CameraMainPos").transform;
 
