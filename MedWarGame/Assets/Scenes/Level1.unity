@@ -1085,6 +1085,12 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1 &1050027506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7018825989614189878, guid: 266bf0b17bb5b214b881fb31f8ee7721,
+    type: 3}
+  m_PrefabInstance: {fileID: 2135333458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1118824951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 829941369003195353, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
@@ -1321,6 +1327,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1893406342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2009175817827003195, guid: 266bf0b17bb5b214b881fb31f8ee7721,
+    type: 3}
+  m_PrefabInstance: {fileID: 2135333458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1895835577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3696551915490857227, guid: 266bf0b17bb5b214b881fb31f8ee7721,
+    type: 3}
+  m_PrefabInstance: {fileID: 2135333458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1895862530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,5 +1619,35 @@ PrefabInstance:
       propertyPath: currencyManager
       value: 
       objectReference: {fileID: 808265082}
+    - target: {fileID: 1343836938452078725, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119482868376318953, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: treeObject
+      value: 
+      objectReference: {fileID: 1895835577}
+    - target: {fileID: 5944618372994239942, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: treeObject
+      value: 
+      objectReference: {fileID: 1050027506}
+    - target: {fileID: 2455791707466608298, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944618374100744324, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: treeObject
+      value: 
+      objectReference: {fileID: 1893406342}
+    - target: {fileID: 2455791706494753768, guid: 59cbf2f6b119fc44a9db0c0d59385d79,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59cbf2f6b119fc44a9db0c0d59385d79, type: 3}
