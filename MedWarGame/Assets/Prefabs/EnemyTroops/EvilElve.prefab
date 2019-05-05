@@ -1030,7 +1030,6 @@ GameObject:
   - component: {fileID: 4244576857810387199}
   - component: {fileID: -6470799091505488738}
   - component: {fileID: 2767734222982576326}
-  - component: {fileID: -1755077824958851661}
   - component: {fileID: 8564508183793510820}
   m_Layer: 0
   m_Name: EvilElve
@@ -1113,19 +1112,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-1755077824958851661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7077017795973848982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee609373a40fa54d81519d44c3f306a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionCircle: {fileID: 3869726826405256840}
 --- !u!114 &8564508183793510820
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OptionsMenuManager : MonoBehaviour
 {
@@ -29,5 +30,9 @@ public class OptionsMenuManager : MonoBehaviour
         ResumeButton.SetActive(false);
         OptionsButton.SetActive(false);
         MainMenuButton.SetActive(false);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

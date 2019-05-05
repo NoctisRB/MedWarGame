@@ -139,11 +139,8 @@ public class UnitSelectionComponent : MonoBehaviour
         {
             foreach (var selectedUnit in selectedObjects)
             {
-                if (selectedUnit == null)
-                {
-                    Debug.Log("UNIT-NULL");
-                }
-                if (target != null)
+               
+                if (target != null && selectedUnit != null)
                 {
                     selectedUnit.GetComponent<troopScript>().MoveTo(target);
                 }
