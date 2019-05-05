@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6208929549020565186}
   - component: {fileID: 6217895598916127062}
   m_Layer: 0
-  m_Name: projectile_wizard
+  m_Name: projectile_elve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6208929549020565185}
-  m_Mesh: {fileID: -2432090755550338912, guid: 14e7d6d34f8bc1a489448d8454610506, type: 3}
+  m_Mesh: {fileID: -2432090755550338912, guid: 5593a43078b60dd4fae59a87d2f5fb71, type: 3}
 --- !u!23 &6208929549020565188
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 523be79aca760874b85e6cd58060187b, type: 2}
+  - {fileID: 2100000, guid: e14deeb6e8dc1be4fb1a999bffcb500e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -161,7 +161,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.9975278, g: 1, b: 0.7169812, a: 1}
+      key0: {r: 1, g: 0.84254956, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

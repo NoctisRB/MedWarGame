@@ -172,7 +172,10 @@ public class troopScript : MonoBehaviour
         {
             if (_target != null)
             {
-                _agent.destination = _target.transform.position;
+                if (_agent.isActiveAndEnabled)
+                {
+                    _agent.destination = _destination;
+                }
 
                 foreach (var enemy in _enemies)
                 {
@@ -244,7 +247,10 @@ public class troopScript : MonoBehaviour
                 _animator.SetBool("idle", false);
                 _animator.SetBool("run", true);
                 _agent.speed = _speed;
-                _agent.destination = _destination;
+                if (_agent.isActiveAndEnabled)
+                {
+                    _agent.destination = _destination;
+                }
                 break;
             case State.Attack:
                 _animator.SetBool("idle", false);

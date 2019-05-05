@@ -294,12 +294,13 @@ MonoBehaviour:
   _cost: 25
   _deployRange: 5
   _animator: {fileID: 4744596968607255155}
-  _orcProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
+  _orcProjectile: {fileID: 6208929549020565185, guid: 7bc991e7b6b7a0545b0d2db62fcdef79,
     type: 3}
-  _elveProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
+  _elveProjectile: {fileID: 6208929549020565185, guid: b5adb803f0f115b4a8307cc431e60dd2,
     type: 3}
-  _wizardProjectile: {fileID: 6208929549020565185, guid: 98abe18c70421974584d0f0b9ec13824,
+  _wizardProjectile: {fileID: 6208929549020565185, guid: e7ee1549d266e11479a61f15aea8225b,
     type: 3}
+  _audioManager: {fileID: 0}
   _currentState: 0
   _troopType: 2
 --- !u!54 &7283732100594081161
