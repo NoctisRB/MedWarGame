@@ -87,32 +87,35 @@ public class EnemyBase : MonoBehaviour
 
     private void ConsiderSpawn()
     {
-        if (_currentEnergy < 10)
+        if(this.gameObject.GetComponent<treeScript>().GetHp() >= 0)
         {
-            return;
-        }
-        else if (_currentEnergy < 25)
-        {
-            //Spawn Dwarf or Elf
-            Debug.Log("DWARF or ELF");
+            if (_currentEnergy < 10)
+            {
+                return;
+            }
+            else if (_currentEnergy < 25)
+            {
+                //Spawn Dwarf or Elf
+                Debug.Log("DWARF or ELF");
 
-            int r = Random.Range(0, 1);
-            if (r == 0) spawnedTroop = Troop.dwarf;
-            else spawnedTroop = Troop.elve;
-            SpawnTroop();
-            return;
-        }
-        else
-        {
-            //Spawn Orc or Wizard
-            //Debug.Log("ORC or WIZARD or DWARF or ELF");
-            int r = Random.Range(0, 3);
-            if (r == 0) spawnedTroop = Troop.dwarf;
-            else if (r == 1) spawnedTroop = Troop.elve;
-            else if(r == 2) spawnedTroop = Troop.ogre;
-            else spawnedTroop = Troop.wizard;
-            SpawnTroop();
-            return;
+                int r = Random.Range(0, 1);
+                if (r == 0) spawnedTroop = Troop.dwarf;
+                else spawnedTroop = Troop.elve;
+                SpawnTroop();
+                return;
+            }
+            else
+            {
+                //Spawn Orc or Wizard
+                //Debug.Log("ORC or WIZARD or DWARF or ELF");
+                int r = Random.Range(0, 3);
+                if (r == 0) spawnedTroop = Troop.dwarf;
+                else if (r == 1) spawnedTroop = Troop.elve;
+                else if (r == 2) spawnedTroop = Troop.ogre;
+                else spawnedTroop = Troop.wizard;
+                SpawnTroop();
+                return;
+            }
         }
     }
 
